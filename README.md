@@ -1,4 +1,4 @@
-Streaming-Based Dynamic Pricing for Ride-Hailing Services
+Retail Banking Big Data Analytics
 ==============================
 Contributors:
 --------------------- 
@@ -8,28 +8,21 @@ Contributors:
 Description
 ----------------
 
-Develop a real-time dynamic pricing system based on big data stream analysis from ride trips, traffic flow, and ride-hailing demand.
 
 Components
 ----------------
 1. Apache Spark
 2. Apache Kafka
-3. Amazon S3 Bucket
+3. Cassandra
 ---------------
 Data Pipeline
 ----------------
 1. Data Collection
-- NYC TLC Trip Record Data:
-
-    Access the NYC TLC website to download trip data (https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
-
-- Lyft Open Data:
-
-    Access the Lyft Open Data website to download trip data (https://www.lyft.com/open-data).
-
 2. Data Ingestion
 3. Data Storage
-4. Analysis and Model Training
+4. Data Exploration
+5. Data Analyzing
+6. Model Training
 
 
 
