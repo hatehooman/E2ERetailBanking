@@ -13,7 +13,7 @@ Components
 ----------------
 1. Apache Spark
 2. Apache Kafka
-3. Cassandra
+3. Snowflake Data Warehouse
 ---------------
 Data Pipeline
 ----------------
