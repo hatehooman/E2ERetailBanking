@@ -6,10 +6,14 @@ Contributors
 
 
 <div style="text-align: center;">
+<p align="center">
 
 `Faculty of Information Science and Engineering` \
 `University of Information Technology, Ho Chi Minh City, Viet Nam` \
 `Vietnam National University, Ho Chi Minh City, Viet Nam`
+
+</p>
+
 </div>
 <center>
 
