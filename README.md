@@ -1,8 +1,11 @@
-Modern Big Data Architecture in Retail Banking 
-==============================
+<h1 align="center">Modern Big Data Architecture in Retail Banking</h1>
+
 <p align="center"><small>Faculty of Information Science and Engineering, University of Information Technology, Ho Chi Minh City, Viet Nam <br>
 Vietnam National University, Ho Chi Minh City, Viet Nam
 </small></p>
+
+
+
 
 Contributors
 --------------------- 
