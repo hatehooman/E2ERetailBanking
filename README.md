@@ -11,6 +11,10 @@ Contributors
 Description
 ----------------
 
+--------------
+Retail Banking's Architecture
+-------------
+![image](./Architecture/Retail%20Banking%20System.png)
 
 Technologies
 ----------------
