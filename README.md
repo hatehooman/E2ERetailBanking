@@ -13,7 +13,10 @@ Components
 ----------------
 1. Apache Spark
 2. Apache Kafka
-3. Snowflake Data Warehouse
+3. Apache ZooKeeper
+4. Debezium Connetor
+5. Snowflake Data Warehouse
+6. Postgres Database
 ---------------
 Data Pipeline
 ----------------
