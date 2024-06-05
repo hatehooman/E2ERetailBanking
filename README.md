@@ -10,10 +10,25 @@ Vietnam National University, Ho Chi Minh City, Viet Nam
 Contributors
 --------------------- 
 
-| Student's ID | Fullname | Contact |
-|----------|-------|-------|
-| 21522721 | Nguyen Mai Thanh Truc | 21522721@gm.uit.edu.vn |
-| 21521937 | Nguyen Minh Dat | 21521937@gm.uit.edu.vn |
+<div align="center">
+  <table>
+    <tr>
+      <th>Student's ID</th>
+      <th>Fullname</th>
+      <th>Contact</th>
+    </tr>
+    <tr>
+      <td>21522721</td>
+      <td>Nguyen Mai Thanh Truc</td>
+      <td>21522721@gm.uit.edu.vn</td>
+    </tr>
+    <tr>
+      <td>21521937</td>
+      <td>Nguyen Minh Dat</td>
+      <td>21521937@gm.uit.edu.vn</td>
+    </tr>
+  </table>
+</div>
 
 
 ----------------
