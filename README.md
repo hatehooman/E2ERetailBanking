@@ -1,4 +1,4 @@
-Retail Banking Big Data Analytics
+Modern Big Data Architecture in Retail Banking 
 ==============================
 Contributors:
 --------------------- 
