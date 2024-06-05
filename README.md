@@ -15,7 +15,7 @@ Technologies
 2. Apache Kafka
 3. Apache ZooKeeper
 4. Debezium Connetor
-5. Snowflake Data Warehouse
+5. Snowflake - Cloud Data Warehouse
 6. PostgreSQL
 7. Docker
 8. Python
