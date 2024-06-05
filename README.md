@@ -55,4 +55,4 @@ Project Organization
 
 --------
 
-<p><small>DS200 - Final Big Data Analytics Project - Nguyen Mai Thanh Truc - Nguyen Minh Dat</small></p>
+<p><small>DS200.O21 - Modern Big Data Architecture in Retail Banking - Nguyen Mai Thanh Truc - Nguyen Minh Dat</small></p>
