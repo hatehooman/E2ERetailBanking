@@ -2,10 +2,21 @@ Modern Big Data Architecture in Retail Banking
 ==============================
 Contributors
 --------------------- 
+
+<center>
+
+`Faculty of Information Science and Engineering` \
+`University of Information Technology, Ho Chi Minh City, Viet Nam` \
+`Vietnam National University, Ho Chi Minh City, Viet Nam`
 | Student's ID | Fullname | Contact |
 |----------|-------|-------|
 | 21522721 | Nguyen Mai Thanh Truc | 21522721@gm.uit.edu.vn |
 | 21521937 | Nguyen Minh Dat | 21521937@gm.uit.edu.vn |
+</center>
+
+
+
+
 
 ----------------
 Description
