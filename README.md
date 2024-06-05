@@ -30,7 +30,28 @@ Project Organization
 ------------
 
 
-
+```
+└── 📁Big-Data-Analytics-Final-Project
+    └── .env
+    └── 📁Avro Schema
+        └── account.avsc
+        └── call_center_logs.avsc
+        └── card.avsc
+        └── client.avsc
+        └── crm_events.avsc
+        └── crm_reviews.avsc
+        └── disposition.avsc
+        └── district.avsc
+        └── loan.avsc
+        └── order.avsc
+        └── transaction.avsc
+    └── 📁Dataset
+        └── Retail-Banking-Demo-Data.zip
+    └── docker_compose.yml
+    └── LICENSE
+    └── Makefile
+    └── README.md
+```
 
 --------
 
