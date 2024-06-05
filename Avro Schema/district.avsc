@@ -1,0 +1,30 @@
+{
+    "type": "record",
+    "name": "district",
+    "fields": [
+        {
+            "name": "district_id",
+            "type": "int"
+        },
+        {
+            "name": "city",
+            "type": "string"
+        },
+        {
+            "name": "state_name",
+            "type": "string"
+        },
+        {
+            "name": "state_abbrev",
+            "type": "string"
+        },
+        {
+            "name": "region",
+            "type": "string"
+        },
+        {
+            "name": "division",
+            "type": "string"
+        }
+    ]
+}
