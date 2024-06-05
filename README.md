@@ -1,9 +1,12 @@
 Modern Big Data Architecture in Retail Banking 
 ==============================
-Contributors:
+Contributors
 --------------------- 
-1. Nguyen Mai Thanh Truc 
-2. Nguyen Minh Dat
+| Student's ID | Fullname | Task |
+|----------|-------|-------|
+| 21522721 | Nguyen Mai Thanh Truc | Task 1 |
+| 21521937 | Nguyen Minh Dat | Task 2 |
+
 ----------------
 Description
 ----------------
