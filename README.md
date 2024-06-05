@@ -7,22 +7,16 @@ Vietnam National University, Ho Chi Minh City, Viet Nam
 Contributors
 --------------------- 
 
-<!-- 
-<center>
-<small>
-
-`Faculty of Information Science and Engineering` <br>
-`University of Information Technology, Ho Chi Minh City, Viet Nam` <br>
-`Vietnam National University, Ho Chi Minh City, Viet Nam`
-
-</small>
-</center> -->
-
+<p align="center"><medium>
 
 | Student's ID | Fullname | Contact |
 |----------|-------|-------|
 | 21522721 | Nguyen Mai Thanh Truc | 21522721@gm.uit.edu.vn |
 | 21521937 | Nguyen Minh Dat | 21521937@gm.uit.edu.vn |
+
+</medium></p>
+
+
 
 
 ----------------
