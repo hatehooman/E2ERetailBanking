@@ -14,7 +14,11 @@ Description
 --------------
 Retail Banking's Architecture
 -------------
-![image](./Architecture/Retail%20Banking%20System.png)
+![Pipeline](./Architecture/Retail%20Banking%20System.png)
+---------------
+ER Diagram of Retail Banking Database
+---------------
+![ER-Diagram](./ER%20Diagram/ER-Diagram.png)
 
 Technologies
 ----------------
@@ -27,6 +31,10 @@ Technologies
 7. Docker
 8. Python
 ---------------
+
+
+
+
 Data Pipeline
 ----------------
 1. Data Collection
