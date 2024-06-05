@@ -4,10 +4,16 @@ Contributors
 --------------------- 
 
 
+<center>
+<small>
 
-`Faculty of Information Science and Engineering` \
-`University of Information Technology, Ho Chi Minh City, Viet Nam` \
+`Faculty of Information Science and Engineering` <br>
+`University of Information Technology, Ho Chi Minh City, Viet Nam` <br>
 `Vietnam National University, Ho Chi Minh City, Viet Nam`
+
+</small>
+</center>
+
 
 | Student's ID | Fullname | Contact |
 |----------|-------|-------|
