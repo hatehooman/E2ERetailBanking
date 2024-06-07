@@ -77,6 +77,9 @@ Project Organization
 ```
 └── 📁Big-Data-Analytics-Final-Project
     └── .env
+    └── 📁Architecture
+        └── Retail Banking System.pdf
+        └── Retail Banking System.png
     └── 📁Avro Schema
         └── account.avsc
         └── call_center_logs.avsc
@@ -92,9 +95,23 @@ Project Organization
     └── 📁Dataset
         └── Retail-Banking-Demo-Data.zip
     └── docker_compose.yml
+    └── 📁ER Diagram
+        └── ER-Diagram.png
     └── LICENSE
     └── Makefile
+    └── packages.txt
     └── README.md
+    └── 📁Report
+    └── requirements.txt
+    └── 📁Snowflake Data Warehouse
+        └── 1 - MODIFY.sql
+        └── 2 - IMPORT RESOURCE.sql
+        └── 3 - TRANSFORM RESOURCE.sql
+        └── 4 - REPORTING RESOURCE.sql
+        └── 5 - RESOURCE MONITORS.sql
+    └── 📁src
+        └── 📁components
+        └── __init__.py
 ```
 
 --------
