@@ -1,0 +1,7 @@
+snowflake-connector-python==3.10.1
+psycopg2==2.9.9
+confluent-kafka==2.4.0
+avro==1.11.3
+kafka-python==2.0.2
+pyspark==3.5.1
+python-decouple==3.8
