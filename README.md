@@ -50,7 +50,7 @@ In this project we will do
 -----------------
 1. Change Data Capture (CDC)
 2. Build Data Warehouse
-3. Analysis and Modeling Training
+3. Analysis and Model Training
 
 Technologies
 ----------------
