@@ -44,6 +44,14 @@ ER Diagram of Retail Banking Database
 ---------------
 ![ER-Diagram](./ER%20Diagram/ER-Diagram.png)
 
+
+-----------------
+In this project we will do
+-----------------
+1. Change Data Capture (CDC)
+2. Analysis
+3. Dashboard Report
+
 Technologies
 ----------------
 1. Apache Spark
