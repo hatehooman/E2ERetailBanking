@@ -34,6 +34,7 @@ Contributors
 ----------------
 Description
 ----------------
+The banking industry is a field that uses big data and is constantly growing under the push of the big data era. Exploring advanced big data analytics tools such as data mining (DM) techniques is key for the banking industry, which aims to reveal valuable information from huge volumes of data and achieve data management. In this project, we will build The Architecture of Big Data Analytics Pipeline in the Retail Banking Industry.
 
 --------------
 Retail Banking's Architecture
