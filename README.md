@@ -49,8 +49,8 @@ ER Diagram of Retail Banking Database
 In this project we will do
 -----------------
 1. Change Data Capture (CDC)
-2. Analysis
-3. Dashboard Report
+2. Build Data Warehouse
+3. Analysis and Modeling Training
 
 Technologies
 ----------------
@@ -81,7 +81,6 @@ Data Pipeline
 Project Organization
 ------------
 
-
 ```
 └── 📁Big-Data-Analytics-Final-Project
     └── .env
@@ -107,7 +106,7 @@ Project Organization
         └── ER-Diagram.png
     └── LICENSE
     └── Makefile
-    └── packages.txt
+    └── 📁Notebooks
     └── README.md
     └── 📁Report
     └── requirements.txt
@@ -118,7 +117,25 @@ Project Organization
         └── 4 - REPORTING RESOURCE.sql
         └── 5 - RESOURCE MONITORS.sql
     └── 📁src
-        └── 📁components
+        └── 📁cdc
+            └── __init__.py
+        └── 📁config
+            └── log_config.yaml
+            └── __init__.py
+        └── 📁data_warehouse
+            └── __init__.py
+        └── 📁scripts
+            └── run_cdc_pipeline.py
+            └── run_spark_job.py
+            └── __init__.py
+        └── 📁spark
+            └── spark_job.py
+            └── spark_session.py
+            └── spark_transformer.py
+            └── __init__.py
+        └── 📁utils
+            └── logger.py
+            └── __init__.py
         └── __init__.py
 ```
 
