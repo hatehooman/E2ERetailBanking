@@ -47,7 +47,7 @@ ER Diagram of Retail Banking Database
 
 
 -----------------
-In this project we will do
+Main task in our project
 -----------------
 1. Change Data Capture (CDC)
 2. Build Data Warehouse
