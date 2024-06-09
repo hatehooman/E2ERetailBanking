@@ -15,4 +15,3 @@
   }
 }
 
-// docker cp "D:\Home Credit\Banking\retail-banking-demo-data\completedcard.csv" debezium/postgres:16:/completedcard.csv
