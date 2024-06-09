@@ -16,16 +16,19 @@ Contributors
       <th>Student's ID</th>
       <th>Fullname</th>
       <th>Contact</th>
+      <th>Task Assignment</th>
     </tr>
     <tr>
       <td>21522721</td>
       <td>Nguyen Mai Thanh Truc</td>
       <td>21522721@gm.uit.edu.vn</td>
+      <td>CDC, Data Warehouse</td>
     </tr>
     <tr>
       <td>21521937</td>
       <td>Nguyen Minh Dat</td>
       <td>21521937@gm.uit.edu.vn</td>
+      <td>Analysis, Model Training</td>
     </tr>
   </table>
 </div>
