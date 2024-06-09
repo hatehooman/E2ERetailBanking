@@ -119,11 +119,22 @@ Project Organization
         └── 5 - RESOURCE MONITORS.sql
     └── 📁src
         └── 📁cdc
+            └── cdc_extractor.py
+            └── cdc_handler.py
+            └── cdc_loader.py
+            └── cdc_transformer.py
             └── __init__.py
         └── 📁config
-            └── log_config.yaml
+            └── config.yaml
+            └── db_config.py
+            └── log_config.py
+            └── spark_config.py
             └── __init__.py
         └── 📁data_warehouse
+            └── dw_loader.py
+            └── dw_queries.py
+            └── dw_schema.sql
+            └── dw_transformer.py
             └── __init__.py
         └── 📁scripts
             └── run_cdc_pipeline.py
@@ -136,11 +147,13 @@ Project Organization
             └── __init__.py
         └── 📁utils
             └── db_utils.py
+            └── file_utils.py
+            └── kafka_utils.py
             └── logger.py
+            └── spark_utils.py
             └── __init__.py
         └── __init__.py
 ```
-
 --------
 License
 --------
