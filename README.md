@@ -138,6 +138,7 @@ Project Organization
             └── __init__.py
         └── 📁scripts
             └── run_cdc_pipeline.py
+            └── run_dw_pipeline.py
             └── run_spark_job.py
             └── __init__.py
         └── 📁spark
