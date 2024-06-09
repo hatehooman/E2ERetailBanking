@@ -164,4 +164,4 @@ License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---------------
-<p><small>DS200.O21 - Modern Big Data Architecture in Retail Banking - Nguyen Mai Thanh Truc - Nguyen Minh Dat</small></p>
+<p><small>DS200.O21 - Modern Big Data Architecture in Retail Banking - Nguyen Mai Thanh Truc and Nguyen Minh Dat</small></p>
