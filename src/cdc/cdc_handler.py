@@ -14,6 +14,7 @@ class CDCHandler:
         self.loader.load_changes(transformed_changes)
 
 # Example usage:
-# config = load_config('config/config.yaml')
+# from config.db_config import load_db_config
+# config = load_db_config('config/config.yaml')
 # handler = CDCHandler(config)
 # handler.process_changes()
