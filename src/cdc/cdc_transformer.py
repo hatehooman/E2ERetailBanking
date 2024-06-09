@@ -1,20 +1,20 @@
+import avro.schema
+import io
+from avro.io import DatumReader, BinaryDecoder
+
+
 class CDCTransformer:
     def __init__(self, config):
-        self.config = config
+        self.schema = avro.schema.parse(open(config['avro_schema_path'], "rb").read())
+        self.reader = DatumReader(self.schema)
+
+    def decode(self, msg_value):
+        message_bytes = io.BytesIO(msg_value)
+        message_bytes.seek(7)
+        decoder = BinaryDecoder(message_bytes)
+        event_dict = self.reader.read(decoder)
+        return event_dict
 
     def transform_changes(self, changes):
-        transformed_changes = []
-        for change in changes:
-            transformed_change = self._transform_change(change)
-            transformed_changes.append(transformed_change)
-        return transformed_changes
-
-    def _transform_change(self, change):
-        # Implement your transformation logic here
-        return change
-
-# Example usage:
-# from config.db_config import load_db_config
-# config = load_db_config('config/config.yaml')
-# transformer = CDCTransformer(config)
-# transformed_changes = transformer.transform_changes(changes)
+        for msg in changes:
+            yield self.decode(msg.value)

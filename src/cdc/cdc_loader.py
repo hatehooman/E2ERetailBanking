@@ -2,33 +2,47 @@ import snowflake.connector
 
 class CDCDataLoader:
     def __init__(self, config):
-        self.config = config
         self.conn = snowflake.connector.connect(
-            user=config['database']['snowflake']['user'],
-            password=config['database']['snowflake']['password'],
-            account=config['database']['snowflake']['account'],
-            warehouse=config['database']['snowflake']['warehouse'],
-            database=config['database']['snowflake']['database'],
-            schema=config['database']['snowflake']['schema']
+            user=config['snowflake_user'],
+            password=config['snowflake_password'],
+            account=config['snowflake_account'],
+            warehouse=config['snowflake_warehouse'],
+            database=config['snowflake_database'],
+            schema=config['snowflake_schema']
         )
-        self.cursor = self.conn.cursor()
 
-    def load_changes(self, changes):
-        for change in changes:
-            self._load_change(change)
+        self.create_table_query = """
+        CREATE TABLE IF NOT EXISTS INGREDIENTS (
+            ingredient_id INT,
+            ingredient_name STRING,
+            ingredient_price FLOAT
+        );
+        """
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute(self.create_table_query)
+            self.conn.commit()
+            cursor.close()
+            print("Table INGREDIENTS is ready.")
+        except Exception as e:
+            print("Error creating table:", e)
+            cursor.close()
+            self.conn.close()
+            exit(1)
 
-    def _load_change(self, change):
-        # Implement your loading logic here
-        query = "INSERT INTO your_table (columns) VALUES (values)"
-        self.cursor.execute(query)
+    def insert_data(self, data):
+        cursor = self.conn.cursor()
+        try:
+            cursor.execute("""
+                INSERT INTO INGREDIENTS (ingredient_id, ingredient_name, ingredient_price)
+                VALUES (%s, %s, %s)
+            """, (data['ingredient_id'], data['ingredient_name'], data['ingredient_price']))
+            cursor.close()
+            self.conn.commit()
+            print("Data inserted successfully.")
+        except Exception as e:
+            print("Error inserting data:", e)
 
-    def close(self):
-        self.cursor.close()
-        self.conn.close()
-
-# Example usage:
-# from config.db_config import load_db_config
-# config = load_db_config('config/config.yaml')
-# loader = CDCDataLoader(config)
-# loader.load_changes(transformed_changes)
-# loader.close()
+    def load_changes(self, transformed_changes):
+        for data in transformed_changes:
+            self.insert_data(data)
