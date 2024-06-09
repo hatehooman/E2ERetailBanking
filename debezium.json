@@ -1,0 +1,18 @@
+{
+  "name": "postgresql-connector",
+  "config": {
+  "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+  "plugin.name": "pgoutput",
+  "database.hostname": "postgres",
+  "database.port": "5432",
+  "database.user": "postgres",
+  "database.password": "thanhtruc28",
+  "database.dbname": "retailbanking",
+  "database.server.name": "postgres",
+  "table.include.list": "public.card",
+  "table.whitelist": "public.card",
+  "topic.prefix": "topic_retailbanking"
+  }
+}
+
+// docker cp "D:\Home Credit\Banking\retail-banking-demo-data\completedcard.csv" debezium/postgres:16:/completedcard.csv
