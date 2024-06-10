@@ -71,16 +71,10 @@ Technologies
 
 
 
-Data Pipeline
+Data Warehouse Architecture
 ----------------
-1. Data Collection
-2. Data Ingestion
-3. Data Storage
-4. Data Exploration
-5. Data Analyzing
-6. Model Training
 
-
+![DataWarehouse](./Architecture/Data%20Warehouse%20Design.png)
 
 Project Organization
 ------------
