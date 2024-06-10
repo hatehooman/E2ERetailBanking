@@ -86,7 +86,7 @@ Project Organization
 ------------
 
 ```
-└── 📁Big-Data-Analytics-Final-Project
+└── 📁DS200.O21-Big-Data-Analytics-Final-Project
     └── .env
     └── 📁Architecture
         └── Retail Banking System.pdf
@@ -105,14 +105,13 @@ Project Organization
         └── transaction.avsc
     └── 📁Dataset
         └── Retail-Banking-Demo-Data.zip
+    └── debezium.json
     └── docker_compose.yml
     └── 📁ER Diagram
         └── ER-Diagram.png
     └── LICENSE
     └── Makefile
-    └── 📁Notebooks
     └── README.md
-    └── 📁Report
     └── requirements.txt
     └── 📁Snowflake Data Warehouse
         └── 1 - MODIFY.sql
@@ -129,6 +128,9 @@ Project Organization
             └── __init__.py
         └── 📁config
             └── config.yaml
+            └── config_import.yaml
+            └── config_reporting.yaml
+            └── config_transform.yaml
             └── db_config.py
             └── log_config.py
             └── spark_config.py
