@@ -87,7 +87,7 @@ Data Warehouse Architecture
     * RAW schema
     * CLEAN schema
     * REPORTING schema
-### 4. Roles:: 3 Roles
+### 4. Roles: 3 Roles
     * Import Role
     * Transform Role
     * Reporting Role
