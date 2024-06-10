@@ -1,8 +1,18 @@
 from cdc.cdc_handler import CDCHandler
-from config.db_config import load_db_config
-def main():
-    config = load_db_config('config/config.yaml')
+from config.db_config import ConfigLoader
+import sys
+
+def main(config_file):
+    # config = ConfigLoader.load_db_config('config/config.yaml')
+    config = ConfigLoader.load_db_config(config_file)
     handler = CDCHandler(config)
     handler.process_changes()
+    
 if __name__ == "__main__":
-    main()
+    
+    if len(sys.argv) != 2:
+        print("Usage: python src/run_cdc_pipeline.py <config_file>")
+        sys.exit(1)
+
+    config_file = sys.argv[1]
+    main(config_file)
