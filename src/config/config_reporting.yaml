@@ -1,0 +1,32 @@
+database:
+  snowflake:
+    user: your_reporting_user
+    password: your_password
+    account: your_snowflake_account
+    warehouse: REPORTING_WH
+    database: PROD
+    schema: REPORTING
+    avro_schema_path: path_to_avro_schema
+
+kafka:
+  bootstrap_servers: your_kafka_bootstrap_servers
+  topic: your_kafka_topic
+  group_id: reporting_group
+  auto_offset_reset: latest
+  enable_auto_commit: true
+
+logging:
+  version: 1
+  disable_existing_loggers: False
+  formatters:
+    simple:
+      format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: DEBUG
+      formatter: simple
+      stream: ext://sys.stdout
+  root:
+    level: DEBUG
+    handlers: [console]
