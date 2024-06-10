@@ -3,12 +3,12 @@ import snowflake.connector
 class CDCDataLoader:
     def __init__(self, config):
         self.conn = snowflake.connector.connect(
-            user=config['snowflake_user'],
-            password=config['snowflake_password'],
-            account=config['snowflake_account'],
-            warehouse=config['snowflake_warehouse'],
-            database=config['snowflake_database'],
-            schema=config['snowflake_schema']
+            user=config['snowflake']['snowflake_user'],
+            password=config['snowflake']['snowflake_password'],
+            account=config['snowflake']['snowflake_account'],
+            warehouse=config['snowflake']['snowflake_warehouse'],
+            database=config['snowflake']['snowflake_database'],
+            schema=config['snowflake']['snowflake_schema']
         )
 
         self.create_table_query = """
