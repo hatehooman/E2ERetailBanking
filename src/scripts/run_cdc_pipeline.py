@@ -16,3 +16,8 @@ if __name__ == "__main__":
 
     config_file = sys.argv[1]
     main(config_file)
+
+# Run .bash
+# python src/run_cdc_pipeline.py config/config_import.yaml
+# python src/run_cdc_pipeline.py config/config_transform.yaml
+# python src/run_cdc_pipeline.py config/config_reporting.yaml
