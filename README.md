@@ -104,6 +104,7 @@ Data Warehouse Architecture
 * Import User
 * Data Engineer/ ETL Admin User
 * Data Analyst / BI User
+
 Project Organization
 ------------
 
