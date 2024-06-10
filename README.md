@@ -76,6 +76,25 @@ Data Warehouse Architecture
 
 ![DataWarehouse](./Architecture/Data%20Warehouse%20Design.png)
 
+1. Warehouses: 3 Warehouses
+    * IMPORT_WAREHOUSE
+    * TRANSFORM_WAREHOUSE
+    * REPORTING_WAREHOUSE
+2. Databases: 2 Databases
+    * STAGING
+    * PROD
+3. Schemas
+    * RAW schema
+    * CLEAN schema
+    * REPORTING schema
+4. Roles:: 3 Roles
+    * Import Role
+    * Transform Role
+    * Reporting Role
+5. Users: 3 Users
+    * Import User
+    * Data Engineer/ ETL Admin User
+    * Data Analyst / BI User
 Project Organization
 ------------
 
