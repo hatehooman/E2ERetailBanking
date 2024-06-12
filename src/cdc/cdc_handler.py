@@ -14,12 +14,12 @@ class CDCHandler:
     def create_database_and_schema(self):
         try:
             conn = snowflake.connector.connect(
-                user=self.config['snowflake_user'],
-                password=self.config['snowflake_password'],
-                account=self.config['snowflake_account'],
-                warehouse=self.config['snowflake_warehouse'],
-                database='snowflake',
-                schema='public'
+                user=self.config['snowflake']['snowflake_user'],
+                password=self.config['snowflake']['snowflake_password'],
+                account=self.config['snowflake']['snowflake_account'],
+                warehouse=self.config['snowflake']['snowflake_warehouse'],
+                database=self.config['snowflake']['snowflake_database'],
+                schema=self.config['snowflake']['snowflake_schema']
             )
 
             # Create the database if it doesn't exist
