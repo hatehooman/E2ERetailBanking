@@ -1,19 +1,13 @@
-import snowflake.connector
-
+from dw_snowflake_connection import create_snowflake_connection
 class DWLoader:
-    def __init__(self, config):
-        self.config = config
-        self.conn = snowflake.connector.connect(
-            user=config['database']['snowflake']['user'],
-            password=config['database']['snowflake']['password'],
-            account=config['database']['snowflake']['account'],
-            warehouse=config['database']['snowflake']['warehouse'],
-            database=config['database']['snowflake']['database'],
-            schema=config['database']['snowflake']['schema']
-        )
+
+    def __init__(self, config_path):
+
+        self.conn = create_snowflake_connection(config_path)
         self.cursor = self.conn.cursor()
 
     def load_data(self, data):
+
         for record in data:
             self._load_record(record)
 
@@ -23,11 +17,8 @@ class DWLoader:
         self.cursor.execute(query)
 
     def close(self):
+
         self.cursor.close()
         self.conn.close()
 
-# Example usage:
-# config = load_config('config/config.yaml')
-# loader = DWLoader(config)
-# loader.load_data(data)
-# loader.close()
+

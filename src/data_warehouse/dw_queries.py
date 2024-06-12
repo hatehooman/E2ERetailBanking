@@ -1,16 +1,9 @@
 import snowflake.connector
-
+from dw_snowflake_connection import create_snowflake_connection
 class DWQueries:
-    def __init__(self, config):
-        self.config = config
-        self.conn = snowflake.connector.connect(
-            user=config['database']['snowflake']['user'],
-            password=config['database']['snowflake']['password'],
-            account=config['database']['snowflake']['account'],
-            warehouse=config['database']['snowflake']['warehouse'],
-            database=config['database']['snowflake']['database'],
-            schema=config['database']['snowflake']['schema']
-        )
+    def __init__(self, config_path):
+
+        self.conn = create_snowflake_connection(config_path)
         self.cursor = self.conn.cursor()
 
     def execute_query(self, query):

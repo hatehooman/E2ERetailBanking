@@ -1,25 +1,9 @@
-import yaml
-from snowflake.connector import connect
-
+from dw_snowflake_connection import create_snowflake_connection
 class DWTransformer:
+
     def __init__(self, config_path):
-        self.config = self.load_config(config_path)
-        self.conn = self.connect_to_snowflake()
-
-    def load_config(self, config_path):
-        with open(config_path, 'r') as file:
-            config = yaml.safe_load(file)
-        return config
-
-    def connect_to_snowflake(self):
-        return connect(
-            user=self.config['snowflake']['user'],
-            password=self.config['snowflake']['password'],
-            account=self.config['snowflake']['account'],
-            warehouse=self.config['snowflake']['warehouse'],
-            database=self.config['snowflake']['database'],
-            schema=self.config['snowflake']['schema']
-        )
+        
+        self.conn = self.create_snowflake_connection(config_path)
 
     def transform_data(self, source_table, target_table, transformation_query):
         # Load data from source_table
