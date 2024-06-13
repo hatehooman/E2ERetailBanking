@@ -1,7 +1,7 @@
 <h1 align="center">Modern Big Data Architecture in Retail Banking</h1>
 
 <p align="center"><small>Faculty of Information Science and Engineering, University of Information Technology, Ho Chi Minh City, Viet Nam <br>
-Vietnam National University, Ho Chi Minh City, Viet Nam
+Vietnam National University, Ho Chi Minh City, Viet Nam <br> <strong>Instructor: PhD. Do Trong Hop</strong>
 </small></p>
 
 
@@ -44,7 +44,7 @@ Retail Banking's Architecture
 -------------
 ![Pipeline](./Architecture/Retail%20Banking%20System.png)
 ---------------
-ER Diagram of Retail Banking Database
+Entity Relationship Diagram of Retail Banking Database
 ---------------
 ![ER-Diagram](./ER%20Diagram/ER-Diagram.png)
 
