@@ -125,6 +125,12 @@ Data Warehouse Architecture
 * Data Engineer/ ETL Admin User
 * Data Analyst / BI User
 
+Analysis and Model Training
+-----------------
+1. Process
+2. Modeling
+3. Evaluation
+
 Project Organization
 ------------
 
