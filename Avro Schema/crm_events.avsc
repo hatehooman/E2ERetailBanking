@@ -1,78 +1,21 @@
 {
-    "type": "record",
-    "name": "crm_events",
-    "fields": [
-        {
-            "name": "Date_received",
-            "type": {
-                "type": "int",
-                "logicalType": "date"
-            }
-        },
-        {
-            "name": "Product",
-            "type": "string"
-        },
-        {
-            "name": "Sub_product",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "Issue",
-            "type": "string"
-        },
-        {
-            "name": "Sub_issue",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "Consumer_complaint",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "Tags",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "Consumer_consent",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "Submitted_via",
-            "type": "string"
-        },
-        {
-            "name": "Date_sent",
-            "type": {
-                "type": "int",
-                "logicalType": "date"
-            }
-        },
-        {
-            "name": "Company_response",
-            "type": "string"
-        },
-        {
-            "name": "Timely_response",
-            "type": "string"
-        },
-        {
-            "name": "Consumer_disputed",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "Complaint_id",
-            "type": "string"
-        },
-        {
-            "name": "Client_ID",
-            "type": "string"
-        }
-    ]
+  "type": "record",
+  "name": "CRMEvents",
+  "fields": [
+    {"name": "Date_received", "type": "string", "logicalType": "date"},
+    {"name": "Product", "type": "string"},
+    {"name": "Sub_product", "type": ["null", "string"], "default": null},
+    {"name": "Issue", "type": "string"},
+    {"name": "Sub_issue", "type": ["null", "string"], "default": null},
+    {"name": "Consumer_complaint_narrative", "type": ["null", "string"], "default": null},
+    {"name": "Tags", "type": ["null", "string"], "default": null},
+    {"name": "Consumer_consent_provided", "type": ["null", "string"], "default": null},
+    {"name": "Submitted_via", "type": "string"},
+    {"name": "Date_sent_to_company", "type": "string", "logicalType": "date"},
+    {"name": "Company_response_to_consumer", "type": "string"},
+    {"name": "Timely_response", "type": "string"},
+    {"name": "Consumer_disputed", "type": ["null", "string"], "default": null},
+    {"name": "Complaint_ID", "type": "string"},
+    {"name": "Client_ID", "type": "string"}
+  ]
 }

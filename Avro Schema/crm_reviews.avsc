@@ -1,30 +1,11 @@
 {
-    "type": "record",
-    "name": "crm_reviews",
-    "fields": [
-        {
-            "name": "Date",
-            "type": {
-                "type": "int",
-                "logicalType": "date"
-            }
-        },
-        {
-            "name": "Stars",
-            "type": "int"
-        },
-        {
-            "name": "Reviews",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "Product",
-            "type": "string"
-        },
-        {
-            "name": "district_id",
-            "type": "int"
-        }
-    ]
+  "type": "record",
+  "name": "CRMReviews",
+  "fields": [
+    {"name": "Date", "type": "string", "logicalType": "date"},
+    {"name": "Stars", "type": "int"},
+    {"name": "Reviews", "type": ["null", "string"], "default": null},
+    {"name": "Product", "type": "string"},
+    {"name": "district_id", "type": "int"}
+  ]
 }

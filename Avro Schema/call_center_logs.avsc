@@ -1,69 +1,19 @@
 {
-    "type": "record",
-    "name": "call_center_logs",
-    "fields": [
-        {
-            "name": "Date_recieved",
-            "type": {
-                "type": "int",
-                "logicalType": "date"
-            }
-        },
-        {
-            "name": "Complaint_id",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "Rand_client",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "Phonefinal",
-            "type": "string"
-        },
-        {
-            "name": "Vru_line",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "Call_id",
-            "type": ["null", "int"],
-            "default": null
-        },
-        {
-            "name": "Priority",
-            "type": ["null", "int"],
-            "default": null
-        },
-        {
-            "name": "Type",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "Outcome",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "Server",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "Ser_start",
-            "type": "string"
-        },
-        {
-            "name": "Ser_exit",
-            "type": "string"
-        },
-        {
-            "name": "Ser_time",
-            "type": "string"
-        }
-    ]
+  "type": "record",
+  "name": "CRMCallCenterLogs",
+  "fields": [
+    {"name": "Date_recieved", "type": "string", "logicalType": "date"},
+    {"name": "Complaint_id", "type": ["null", "string"], "default": null},
+    {"name": "Rand_client", "type": ["null", "string"], "default": null},
+    {"name": "Phonefinal", "type": "string"},
+    {"name": "Vru_line", "type": ["null", "string"], "default": null},
+    {"name": "Call_id", "type": ["null", "int"], "default": null},
+    {"name": "Priority", "type": ["null", "int"], "default": null},
+    {"name": "Type", "type": ["null", "string"], "default": null},
+    {"name": "Outcome", "type": ["null", "string"], "default": null},
+    {"name": "Server", "type": ["null", "string"], "default": null},
+    {"name": "Ser_start", "type": "string"},
+    {"name": "Ser_exit", "type": "string"},
+    {"name": "Ser_time", "type": "string"}
+  ]
 }

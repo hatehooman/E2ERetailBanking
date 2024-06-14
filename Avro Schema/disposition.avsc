@@ -1,22 +1,10 @@
 {
-    "type": "record",
-    "name": "disposition",
-    "fields": [
-        {
-            "name": "disp_id",
-            "type": "string"
-        },
-        {
-            "name": "client_id",
-            "type": "string"
-        },
-        {
-            "name": "account_id",
-            "type": "string"
-        },
-        {
-            "name": "type",
-            "type": "string"
-        }
-    ]
+  "type": "record",
+  "name": "Disposition",
+  "fields": [
+    {"name": "disp_id", "type": "string"},
+    {"name": "client_id", "type": "string"},
+    {"name": "account_id", "type": "string"},
+    {"name": "type", "type": {"type": "enum", "name": "disposition_type_enum", "symbols": ["Owner", "User"]}}
+  ]
 }

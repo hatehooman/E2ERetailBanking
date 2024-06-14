@@ -1,31 +1,12 @@
 {
-    "type": "record",
-    "name": "table_order",
-    "fields": [
-        {
-            "name": "order_id",
-            "type": "int"
-        },
-        {
-            "name": "account_id",
-            "type": "string"
-        },
-        {
-            "name": "bank_to",
-            "type": "string"
-        },
-        {
-            "name": "account_to",
-            "type": "int"
-        },
-        {
-            "name": "amount",
-            "type": "float"
-        },
-        {
-            "name": "k_symbol",
-            "type": ["null", "string"],
-            "default": null
-        }
-    ]
+  "type": "record",
+  "name": "Order",
+  "fields": [
+    {"name": "order_id", "type": "int"},
+    {"name": "account_id", "type": "string"},
+    {"name": "bank_to", "type": "string"},
+    {"name": "account_to", "type": "int"},
+    {"name": "amount", "type": "float"},
+    {"name": "k_symbol", "type": ["null", "string"], "default": null}
+  ]
 }

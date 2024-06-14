@@ -1,37 +1,13 @@
 {
-    "type": "record",
-    "name": "account",
-    "fields": [
-        {
-            "name": "account_id",
-            "type": "int"
-        },
-        {
-            "name": "district_id",
-            "type": "string"
-        },
-        {
-            "name": "frequency",
-            "type": "string"
-        },
-        {
-            "name": "parseddate",
-            "type": {
-                "type": "int",
-                "logicalType": "date"
-            }
-        },
-        {
-            "name": "year",
-            "type": "int"
-        },
-        {
-            "name": "month",
-            "type": "int"
-        },
-        {
-            "name": "day",
-            "type": "int"
-        }
-    ]
+  "type": "record",
+  "name": "Account",
+  "fields": [
+    {"name": "account_id", "type": "string"},
+    {"name": "district_id", "type": "int"},
+    {"name": "frequency", "type": {"type": "enum", "name": "account_frequency_enum", "symbols": ["Issuance_After_Transaction", "Monthly_Issuance", "Weekly_Issuance"]}},
+    {"name": "parseddate", "type": "string", "logicalType": "date"},
+    {"name": "year", "type": "int"},
+    {"name": "month", "type": "int"},
+    {"name": "day", "type": "int"}
+  ]
 }

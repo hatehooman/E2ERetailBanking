@@ -1,37 +1,13 @@
 {
-    "type": "record",
-    "name": "card",
-    "fields": [
-        {
-            "name": "card_id",
-            "type": "string"
-        },
-        {
-            "name": "disp_id",
-            "type": "string"
-        },
-        {
-            "name": "type",
-            "type": "string"
-        },
-        {
-            "name": "year",
-            "type": "int"
-        },
-        {
-            "name": "month",
-            "type": "int"
-        },
-        {
-            "name": "day",
-            "type": "int"
-        },
-        {
-            "name": "fulldate",
-            "type": {
-                "type": "int",
-                "logicalType": "date"
-            }
-        }
-    ]
+  "type": "record",
+  "name": "Card",
+  "fields": [
+    {"name": "card_id", "type": "string"},
+    {"name": "disp_id", "type": "string"},
+    {"name": "type", "type": {"type": "enum", "name": "card_type_enum", "symbols": ["VISA_Signature", "VISA_Standard", "VISA_Infinite"]}},
+    {"name": "year", "type": "int"},
+    {"name": "month", "type": "int"},
+    {"name": "day", "type": "int"},
+    {"name": "fulldate", "type": "string", "logicalType": "date"}
+  ]
 }
