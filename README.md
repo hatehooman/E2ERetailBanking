@@ -61,7 +61,7 @@ Technologies
 1. Apache Spark
 2. Apache Kafka
 3. Apache ZooKeeper
-4. Debezium Connetor
+4. Debezium Connector
 5. Snowflake - Cloud Data Warehouse
 6. PostgreSQL
 7. Docker
@@ -77,6 +77,19 @@ Change Data Capture
 * **CDC Connector**: Debezium
 * **Data Ingestion**: Kafka
 * **Data Storage (Target)**: Snowflake Data Warehouse
+
+#### Comparison of Change Data Capture (CDC), Batch Processing, and Real-Time Processing
+
+| Feature          | Change Data Capture (CDC)       | Batch Processing                      | Real-Time Processing                  |
+|------------------|---------------------------------|---------------------------------------|---------------------------------------|
+| **Latency**      | Near real-time                  | High (scheduled intervals)            | Very low (milliseconds)               |
+| **Granularity**  | Row-level changes               | Large batches                         | Individual events or small batches    |
+| **Complexity**   | Moderate to high                | Low to moderate                       | High                                  |
+| **Resource Usage** | Moderate                      | High during batch windows             | High                                  |
+| **Use Cases**    | Data sync, real-time analytics  | Reporting, data warehousing           | Fraud detection, live dashboards      |
+| **Advantages**   | Efficient data transfer         | Simple and efficient for large data   | Immediate insights and actions        |
+| **Disadvantages**| Complexity, potential latency   | High latency, peak resource needs     | Complexity, cost                      |
+
 
 Data Warehouse Architecture
 ----------------
