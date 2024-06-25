@@ -43,10 +43,17 @@ The banking industry is a field that uses big data and is constantly growing und
 Retail Banking's Architecture
 -------------
 ![Pipeline](./Architecture/Retail%20Banking%20System.png)
+
+-----------------
+### Problem Statement
+In the context of retail banking, it is crucial to automate the loan approval process to ensure efficient, accurate, and fair decision-making. This involves assessing various attributes of a customer's loan application and determining whether the loan should be approved or rejected.
+* Input: Customer loan approval profile
+* Output: Approved/Rejected
 ---------------
 Entity Relationship Diagram of Retail Banking Database
 ---------------
 ![ER-Diagram](./ER%20Diagram/ER-Diagram.png)
+
 
 
 -----------------
