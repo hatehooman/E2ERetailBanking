@@ -1,4 +1,4 @@
-<h1 align="center">Modern Big Data Architecture in Retail Banking</h1>
+<h1 align="center">End to End Data Pipeline for Modern Data Analytics Platform in Retail Banking</h1>
 
 <p align="center"><small>Faculty of Information Science and Engineering, University of Information Technology, Ho Chi Minh City, Viet Nam <br>
 Vietnam National University, Ho Chi Minh City, Viet Nam <br> <strong>Instructor: PhD. Do Trong Hop</strong> 
