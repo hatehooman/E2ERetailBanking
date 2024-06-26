@@ -1,23 +1,23 @@
-from cdc.cdc_handler import CDCHandler
-from config.db_config import ConfigLoader
-import sys
+from cdc.cdc_extractor import CDCExtractor
+from cdc.cdc_loader import CDCDataLoader
+from cdc.cdc_transformer import CDCTransformer
 
-def main(config_file):
-    # config = ConfigLoader.load_db_config('config/config.yaml')
-    config = ConfigLoader.load_db_config(config_file)
-    handler = CDCHandler(config)
-    handler.process_changes()
-    
 if __name__ == "__main__":
+    import json
+
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+
+    extractor = CDCExtractor(config)
+    transformer = CDCTransformer(config['avro_schema_paths'])  # Updated to use a mapping of schemas
+    loader = CDCDataLoader(config)
+
+    changes = extractor.extract_changes()
+    transformed_changes = transformer.transform_changes(changes)
+
+    for table, data in transformed_changes:
+        loader.insert_data(table, data)
+
+    loader.close_connection()
+
     
-    if len(sys.argv) != 2:
-        print("Usage: python src/run_cdc_pipeline.py <config_file>")
-        sys.exit(1)
-
-    config_file = sys.argv[1]
-    main(config_file)
-
-# Run .bash
-# python src/run_cdc_pipeline.py config/config_import.yaml
-# python src/run_cdc_pipeline.py config/config_transform.yaml
-# python src/run_cdc_pipeline.py config/config_reporting.yaml
