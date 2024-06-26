@@ -104,34 +104,16 @@ Data Warehouse Architecture
 
 ![DataWarehouse](./Architecture/Data%20Warehouse%20Design.png)
 
-**1. Warehouses: 3 Warehouses**
+# Snowflake Data Warehouse Setup Detail
 
-* IMPORT_WAREHOUSE
-* TRANSFORM_WAREHOUSE
-* REPORTING_WAREHOUSE
+| Component   | Quantity | Detail                                                                                                                                     |
+|-------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| Databases   | 2        | STAGING, PROD                                                                                                                              |
+| Schemas     | 3        | STAGING.RAW: Keep original raw data as it is ingested. <br> STAGING.CLEAN: Keep cleaned data for ETL & modeling. <br> PROD.REPORTING: Used by BI User & Data Analyst |
+| Warehouses  | 3        | Import Warehouse <br> Transform Warehouse <br> Reporting Warehouse                                                                         |
+| Roles       | 3        | Import Role: Can read from file stage & write to both schemas in StagingDB. No Access to Prod <br> Transform Role: Can read & write to STAGING DB.CLEAN + PROD.REPORTING, No Access to STAGING DB.RAW <br> Reporting Role: Read-only access to PROD.REPORTING schema & tables |
+| Users       | 3        | UserReporting (belongs to REPORTING ROLE) <br> UserTransform (belongs to TRANSFORM ROLE) <br> UserImport (belongs to IMPORT ROLE)          |
 
-**2. Databases: 2 Databases**
-
-* STAGING
-* PROD
-
-**3. Schemas: 3 Schemas**
-
-* RAW schema
-* CLEAN schema
-* REPORTING schema
-
-**4. Roles: 3 Roles**
-
-* Import Role
-* Transform Role
-* Reporting Role
-
-**5. Users: 3 Users**
-
-* Import User
-* Data Engineer/ ETL Admin User
-* Data Analyst / BI User
 
 Analysis and Model Training
 -----------------
