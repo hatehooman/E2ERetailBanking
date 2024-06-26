@@ -115,7 +115,7 @@ Data Warehouse Architecture
 | Users       | 3        | UserReporting (belongs to REPORTING ROLE) <br> UserTransform (belongs to TRANSFORM ROLE) <br> UserImport (belongs to IMPORT ROLE)          |
 
 
-Analysis and Model Training
+Analysis and Model Training with Spark
 -----------------
 1. Process
 2. Modeling
