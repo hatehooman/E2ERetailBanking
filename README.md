@@ -39,16 +39,17 @@ Description
 ----------------
 The banking industry is a field that uses big data and is constantly growing under the push of the big data era. Exploring advanced big data analytics tools such as data mining (DM) techniques is key for the banking industry, which aims to reveal valuable information from huge volumes of data and achieve data management. In this project, we will build a Big Data Analytics System in the Retail Banking Industry.
 
---------------
-Retail Banking's Architecture
--------------
-![Pipeline](./Architecture/Retail%20Banking%20System.png)
-
 -----------------
 ### Problem Statement
 In the context of retail banking, it is crucial to automate the loan approval process to ensure efficient, accurate, and fair decision-making. This involves assessing various attributes of a customer's loan application and determining whether the loan should be approved or rejected.
 * Input: Customer loan approval profile
 * Output: Approved/Rejected
+--------------
+Retail Banking's Architecture
+-------------
+![Pipeline](./Architecture/Retail%20Banking%20System.png)
+
+
 ---------------
 Entity Relationship Diagram of Retail Banking Database
 ---------------
