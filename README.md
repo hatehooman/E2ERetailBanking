@@ -121,6 +121,15 @@ Analysis and Model Training
 2. Modeling
 3. Evaluation
 
+| Model                        | Accuracy | F1 Score | Weighted Precision | Weighted Recall |
+|------------------------------|----------|----------|--------------------|-----------------|
+| LogisticRegression           | 0.9128   | 0.8822   | 0.8884             | 0.9128          |
+| DecisionTreeClassifier       | 0.9374   | 0.9234   | 0.9369             | 0.9374          |
+| RandomForestClassifier       | 0.9266   | 0.9031   | 0.9306             | 0.9266          |
+| MultilayerPerceptronClassifier | 0.9102   | 0.8674   | 0.8285             | 0.9102          |
+| LinearSVC                    | 0.9102   | 0.8674   | 0.8285             | 0.9102          |
+| GBTClassifier                | 0.9676   | 0.9646   | 0.9679             | 0.9676          |
+
 Project Organization
 ------------
 
