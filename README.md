@@ -104,7 +104,7 @@ Data Warehouse Architecture
 
 ![DataWarehouse](./Architecture/Data%20Warehouse%20Design.png)
 
-# Snowflake Data Warehouse Setup Detail
+#### Snowflake Data Warehouse Setup Detail
 
 | Component   | Quantity | Detail                                                                                                                                     |
 |-------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------|
