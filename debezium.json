@@ -1,17 +1,16 @@
 {
   "name": "postgresql-connector",
   "config": {
-  "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
-  "plugin.name": "pgoutput",
-  "database.hostname": "postgres",
-  "database.port": "5432",
-  "database.user": "postgres",
-  "database.password": "thanhtruc28",
-  "database.dbname": "retailbanking",
-  "database.server.name": "postgres",
-  "table.include.list": "public.card",
-  "table.whitelist": "public.card",
-  "topic.prefix": "topic_retailbanking"
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "plugin.name": "pgoutput",
+    "database.hostname": "postgres",
+    "database.port": "5432",
+    "database.user": "postgres",
+    "database.password": "thanhtruc28",
+    "database.dbname": "retailbanking",
+    "database.server.name": "postgres",
+    "table.include.list": "public.card, public.account, public.client, public.disposition, public.district, public.loan, public.\"order\", public.CRMCallCenterLogs, public.crmreviews, public.crmevents, public.transaction",
+    "table.whitelist": "public.card, public.account, public.client, public.disposition, public.district, public.loan, public.\"order\", public.CRMCallCenterLogs, public.crmreviews, public.crmevents, public.transaction",
+    "topic.prefix": "topic_retailbanking"
   }
 }
-
