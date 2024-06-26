@@ -142,9 +142,13 @@ Project Organization
 ------------
 
 ```
-└── 📁DS200.O21-Big-Data-Analytics-Final-Project
+└── 📁E2ERetailBanking
     └── .env
     └── 📁Architecture
+        └── Change Data Capture.pdf
+        └── Change Data Capture.png
+        └── Data Warehouse Design.pdf
+        └── Data Warehouse Design.png
         └── Retail Banking System.pdf
         └── Retail Banking System.png
     └── 📁Avro Schema
@@ -160,6 +164,20 @@ Project Organization
         └── order.avsc
         └── transaction.avsc
     └── 📁Dataset
+        └── data_combine_300.csv
+        └── 📁Retail-Banking-Demo-Data
+            └── completedacct.csv
+            └── completedcard.csv
+            └── completedclient.csv
+            └── completeddisposition.csv
+            └── completeddistrict.csv
+            └── completedloan.csv
+            └── completedorder.csv
+            └── completedtrans.csv
+            └── CRM Call Center Logs.csv
+            └── CRM Events.csv
+            └── CRM Reviews.csv
+            └── LuxuryLoanPortfolio.csv
         └── Retail-Banking-Demo-Data.zip
     └── debezium.json
     └── docker_compose.yml
@@ -170,6 +188,7 @@ Project Organization
     └── README.md
     └── requirements.txt
     └── 📁Snowflake Data Warehouse
+        └── 0 - Postgres - Script.sql
         └── 1 - MODIFY.sql
         └── 2 - IMPORT RESOURCE.sql
         └── 3 - TRANSFORM RESOURCE.sql
@@ -195,6 +214,7 @@ Project Organization
             └── dw_loader.py
             └── dw_queries.py
             └── dw_schema.sql
+            └── dw_snowflake_connection.py
             └── dw_transformer.py
             └── __init__.py
         └── 📁scripts
@@ -203,10 +223,15 @@ Project Organization
             └── run_spark_job.py
             └── __init__.py
         └── 📁spark
+            └── .gitignore
             └── spark_job.py
             └── spark_session.py
+            └── spark_trainer.py
             └── spark_transformer.py
             └── __init__.py
+            └── 📁__pycache__
+                └── spark_session.cpython-311.pyc
+                └── spark_transformer.cpython-311.pyc
         └── 📁utils
             └── db_utils.py
             └── file_utils.py
