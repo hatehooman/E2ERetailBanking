@@ -5,6 +5,8 @@ from kafka import KafkaConsumer
 import snowflake.connector
 import logging
 import datetime
+from concurrent.futures import ThreadPoolExecutor
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -37,28 +39,31 @@ class CDCTransformer:
             return None
 
     def format_date(self, date_obj):
-        if isinstance(date_obj, datetime.date):
-            return date_obj.isoformat()
-        return None
+        try:
+            return datetime.datetime.strptime(date_obj, "%Y-%m-%d").date().isoformat()
+        except (ValueError, TypeError):
+            return None
+
+    def handle_date_field(self, decoded_message, date_field):
+        if date_field in decoded_message and decoded_message[date_field]:
+            parsed_date = self.format_date(decoded_message[date_field])
+            if parsed_date:
+                year, month, day = map(int, parsed_date.split('-'))
+                decoded_message['year'] = year
+                decoded_message['month'] = month
+                decoded_message['day'] = day
+                decoded_message[date_field] = parsed_date
+            else:
+                logger.error(f"Invalid date found: {decoded_message[date_field]}")
 
     def transform_changes(self, changes):
+        date_fields = ['parseddate', 'Date_recieved', 'Date', 'fulldate']
         for msg in changes:
             decoded_message = self.decode(msg.value)
             if decoded_message:
-                # Ensure proper date handling
-                if 'parseddate' in decoded_message and decoded_message['parseddate']:
-                    parsed_date = self.format_date(decoded_message['parseddate'])
-                    if parsed_date:
-                        year, month, day = map(int, parsed_date.split('-'))
-                        decoded_message['year'] = year
-                        decoded_message['month'] = month
-                        decoded_message['day'] = day
-                        decoded_message['parseddate'] = parsed_date
-                        yield decoded_message
-                    else:
-                        logger.error(f"Invalid date found: {decoded_message['parseddate']}")
-                else:
-                    logger.error(f"Missing or empty 'parseddate' field in message: {decoded_message}")
+                for date_field in date_fields:
+                    self.handle_date_field(decoded_message, date_field)
+                yield decoded_message
 
 class CDCDataLoader:
     def __init__(self, config):
@@ -70,9 +75,10 @@ class CDCDataLoader:
             database=config['snowflake_database'],
             schema=config['snowflake_schema']
         )
+        self.table_name = config['table_name']
         self.create_table_query = self.read_sql_file(config['sql_file_path'])
         self.create_table()
-        
+
     def read_sql_file(self, sql_file_path):
         try:
             with open(sql_file_path, 'r') as file:
@@ -88,9 +94,9 @@ class CDCDataLoader:
                 cursor.execute(self.create_table_query)
                 self.conn.commit()
                 cursor.close()
-                logger.info("Table account is ready.")
+                logger.info(f"Table {self.table_name} is ready.")
             except Exception as e:
-                logger.error(f"Error creating table: {e}")
+                logger.error(f"Error creating table {self.table_name}: {e}")
                 if cursor:
                     cursor.close()
                 self.conn.close()
@@ -99,15 +105,17 @@ class CDCDataLoader:
     def insert_data(self, data):
         cursor = self.conn.cursor()
         try:
-            cursor.execute("""
-                INSERT INTO account (account_id, district_id, frequency, parseddate, year, month, day)
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
-            """, (data['account_id'], data['district_id'], data['frequency'], data['parseddate'], data['year'], data['month'], data['day']))
+            columns = ', '.join(data.keys())
+            placeholders = ', '.join(['%s'] * len(data))
+            query = f"INSERT INTO {self.table_name} ({columns}) VALUES ({placeholders})"
+            cursor.execute(query, tuple(data.values()))
             cursor.close()
             self.conn.commit()
-            logger.info("Data inserted successfully.")
+            logger.info(f"Data inserted successfully into {self.table_name}.")
         except Exception as e:
-            logger.error(f"Error inserting data: {e}")
+            logger.error(f"Error inserting data into {self.table_name}: {e}")
+            if cursor:
+                cursor.close()
 
     def load_changes(self, transformed_changes):
         for data in transformed_changes:
@@ -128,18 +136,18 @@ class CDCHandler:
                 password=self.config['snowflake_password'],
                 account=self.config['snowflake_account'],
                 warehouse=self.config['snowflake_warehouse'],
-                database='snowflake',
-                schema='public'
+                database=self.config['snowflake_database'],
+                schema=self.config['snowflake_schema']
             )
 
             # Create the database if it doesn't exist
-            conn.cursor().execute("CREATE DATABASE IF NOT EXISTS POSTGRES")
+            conn.cursor().execute(f"CREATE DATABASE IF NOT EXISTS {self.config['snowflake_database']}")
 
             # Use the database
-            conn.cursor().execute("USE DATABASE POSTGRES")
+            conn.cursor().execute(f"USE DATABASE {self.config['snowflake_database']}")
 
             # Create the schema if it doesn't exist
-            conn.cursor().execute("CREATE SCHEMA IF NOT EXISTS PUBLIC")
+            conn.cursor().execute(f"CREATE SCHEMA IF NOT EXISTS {self.config['snowflake_schema']}")
 
             logger.info("Database and schema are ready.")
             conn.close()
@@ -152,19 +160,40 @@ class CDCHandler:
         self.loader.load_changes(transformed_changes)
 
 def main():
-    config = {
-        'kafka_topic': "postgres.public.account",
-        'kafka_bootstrap_servers': ["localhost:29092"],
-        'avro_schema_path': "./Avro Schema/account.avsc",
-        'snowflake_user': 'trucnmt',
-        'snowflake_password': 'Thanhtruc28!',
-        'snowflake_account': 'WK90181.ap-southeast-1',
-        'snowflake_warehouse': 'COMPUTE_WH',
-        'snowflake_database': 'POSTGRES',
-        'snowflake_schema': 'PUBLIC',
-        'sql_file_path' : './Postgres/account.sql'
-    }
+    configs = [
+        {
+            'kafka_topic': "postgres.public.account",
+            'kafka_bootstrap_servers': ["localhost:29092"],
+            'avro_schema_path': "./Avro Schema/account.avsc",
+            'snowflake_user': 'trucnmt',
+            'snowflake_password': 'Thanhtruc28!',
+            'snowflake_account': 'WK90181.ap-southeast-1',
+            'snowflake_warehouse': 'COMPUTE_WH',
+            'snowflake_database': 'POSTGRES',
+            'snowflake_schema': 'PUBLIC',
+            'sql_file_path' : './Postgres/account.sql',
+            'table_name' : 'account'
+        },
+        {
+            'kafka_topic': "postgres.public.district",
+            'kafka_bootstrap_servers': ["localhost:29092"],
+            'avro_schema_path': "./Avro Schema/district.avsc",
+            'snowflake_user': 'trucnmt',
+            'snowflake_password': 'Thanhtruc28!',
+            'snowflake_account': 'WK90181.ap-southeast-1',
+            'snowflake_warehouse': 'COMPUTE_WH',
+            'snowflake_database': 'POSTGRES',
+            'snowflake_schema': 'PUBLIC',
+            'sql_file_path' : './Postgres/district.sql',
+            'table_name' : 'district'
+        }
+    ]
 
+    with ThreadPoolExecutor() as executor:
+        for config in configs:
+            executor.submit(run_handler, config)
+
+def run_handler(config):
     handler = CDCHandler(config)
     handler.process_changes()
 
