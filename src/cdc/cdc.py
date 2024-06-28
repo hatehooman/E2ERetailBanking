@@ -70,29 +70,31 @@ class CDCDataLoader:
             database=config['snowflake_database'],
             schema=config['snowflake_schema']
         )
-
-        self.create_table_query = """
-            CREATE TABLE IF NOT EXISTS account (
-                account_id VARCHAR(20) NOT NULL PRIMARY KEY,
-                district_id NUMBER(38, 0) NOT NULL,
-                frequency VARCHAR(50) NOT NULL,
-                parseddate DATE NOT NULL,
-                year NUMBER(38, 0) NOT NULL,
-                month NUMBER(38, 0) NOT NULL,
-                day NUMBER(38, 0) NOT NULL
-            );
-        """
+        self.create_table_query = self.read_sql_file(config['sql_file_path'])
+        self.create_table()
+        
+    def read_sql_file(self, sql_file_path):
         try:
-            cursor = self.conn.cursor()
-            cursor.execute(self.create_table_query)
-            self.conn.commit()
-            cursor.close()
-            logger.info("Table account is ready.")
+            with open(sql_file_path, 'r') as file:
+                return file.read()
         except Exception as e:
-            logger.error(f"Error creating table: {e}")
-            cursor.close()
-            self.conn.close()
-            exit(1)
+            logger.error(f"Error reading SQL file {sql_file_path}: {e}")
+            return None
+
+    def create_table(self):
+        if self.create_table_query:
+            try:
+                cursor = self.conn.cursor()
+                cursor.execute(self.create_table_query)
+                self.conn.commit()
+                cursor.close()
+                logger.info("Table account is ready.")
+            except Exception as e:
+                logger.error(f"Error creating table: {e}")
+                if cursor:
+                    cursor.close()
+                self.conn.close()
+                exit(1)
 
     def insert_data(self, data):
         cursor = self.conn.cursor()
@@ -159,7 +161,8 @@ def main():
         'snowflake_account': 'WK90181.ap-southeast-1',
         'snowflake_warehouse': 'COMPUTE_WH',
         'snowflake_database': 'POSTGRES',
-        'snowflake_schema': 'PUBLIC'
+        'snowflake_schema': 'PUBLIC',
+        'sql_file_path' : './Postgres/account.sql'
     }
 
     handler = CDCHandler(config)
