@@ -1,29 +1,31 @@
 {
-    "kafka_topic": "your_kafka_topic",
-    "kafka_bootstrap_servers":  ["localhost:29092"],
-    "avro_schema_paths": {
-        "district": "./Avro Schema/district.avsc",
-        "account": "./Avro Schema/account.avsc",
-        "client": "./Avro Schema/client.avsc",
-        "card": "./Avro Schema/card.avsc",
-        "disposition": "./Avro Schema/disposition.avsc",
-        "loan": "./Avro Schema/loan.avsc",
-        "order": "./Avro Schema/order.avsc",
-        "transaction": "./Avro Schema/transaction.avsc",
-        "CRMCallCenterLogs": "./Avro Schema/CRMCallCenterLogs.avsc",
-        "CRMReviews": "./Avro Schema/CRMReviews.avsc",
-        "CRMEvents": "./Avro Schema/CRMEvents.avsc"
-    },
-    "snowflake_user": "trucnmt",
-    "snowflake_password": "Thanhtruc28!",
-    "snowflake_account": "WK90181.ap-southeast-1",
-    "snowflake_warehouse": "COMPUTE_WH",
-    "snowflake_database": "POSTGRES",
-    "snowflake_schema": "PUBLIC"
-}
-'snowflake_user': 'trucnmt',
-        'snowflake_password': 'Thanhtruc28!',
-        'snowflake_account': 'WK90181.ap-southeast-1',
-        'snowflake_warehouse': 'COMPUTE_WH',
-        'snowflake_database': 'POSTGRES',
-        'snowflake_schema': 'PUBLIC'
+    "configs": [
+      {
+        "kafka_topic": "postgres.public.account",
+        "kafka_bootstrap_servers": ["localhost:29092"],
+        "avro_schema_path": "./Avro Schema/account.avsc",
+        "snowflake_user": "trucnmt",
+        "snowflake_password": "Thanhtruc28!",
+        "snowflake_account": "WK90181.ap-southeast-1",
+        "snowflake_warehouse": "COMPUTE_WH",
+        "snowflake_database": "POSTGRES",
+        "snowflake_schema": "PUBLIC",
+        "sql_file_path": "./Postgres/account.sql",
+        "table_name": "account"
+      },
+      {
+        "kafka_topic": "postgres.public.district",
+        "kafka_bootstrap_servers": ["localhost:29092"],
+        "avro_schema_path": "./Avro Schema/district.avsc",
+        "snowflake_user": "trucnmt",
+        "snowflake_password": "Thanhtruc28!",
+        "snowflake_account": "WK90181.ap-southeast-1",
+        "snowflake_warehouse": "COMPUTE_WH",
+        "snowflake_database": "POSTGRES",
+        "snowflake_schema": "PUBLIC",
+        "sql_file_path": "./Postgres/district.sql",
+        "table_name": "district"
+      }
+    ]
+  }
+  
