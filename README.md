@@ -118,8 +118,10 @@ Data Warehouse Architecture
 
 Analysis and Model Training with Spark
 -----------------
-1. Process
-2. Modeling
+1. Data Pre-processing
+2. Analysis
+* Loan Status Label Statistic
+![LabelStat](./Architecture/Loan_Status_Label_Statistic.png)
 3. Evaluation
 
 | Model                        | Accuracy | F1 Score | Weighted Precision | Weighted Recall |
