@@ -1,7 +1,7 @@
 <h1 align="center">End to End Data Pipeline for Modern Data Analytics Platform in Retail Banking</h1>
 
 <p align="center"><small>Faculty of Information Science and Engineering, University of Information Technology, Ho Chi Minh City, Viet Nam <br>
-Vietnam National University, Ho Chi Minh City, Viet Nam <br> <strong>Instructor: PhD. Do Trong Hop</strong> 
+Vietnam National University, Ho Chi Minh City, Viet Nam <br> <strong>Instructor: PhD. Trong-Hop Do</strong> 
 </small></p>
 
 
@@ -20,13 +20,13 @@ Contributors
     </tr>
     <tr>
       <td>21522721</td>
-      <td>Nguyen Mai Thanh Truc</td>
+      <td>Truc Mai-Thanh Nguyen</td>
       <td>21522721@gm.uit.edu.vn</td>
       <td>Pipeline, CDC, Data Warehouse</td>
     </tr>
     <tr>
       <td>21521937</td>
-      <td>Nguyen Minh Dat</td>
+      <td>Dat Minh Nguyen</td>
       <td>21521937@gm.uit.edu.vn</td>
       <td>Analysis, Model Training</td>
     </tr>
@@ -64,16 +64,17 @@ Main task in our project
 2. Build Data Warehouse
 3. Analysis and Model Training
 
-Technologies
+Technologies Used
 ----------------
 1. Apache Spark
 2. Apache Kafka
 3. Apache ZooKeeper
-4. Debezium Connector
-5. Snowflake - Cloud Data Warehouse
-6. PostgreSQL
-7. Docker
-8. Python
+4. Apache Avro
+5. Debezium Connector
+6. Snowflake - Cloud Data Warehouse
+7. PostgreSQL
+8. Docker
+9. Python
 ---------------
 
 
@@ -128,7 +129,7 @@ Analysis and Model Training with Spark
 | RandomForestClassifier       | 0.9266   | 0.9031   | 0.9306             | 0.9266          |
 | MultilayerPerceptronClassifier | 0.9102   | 0.8674   | 0.8285             | 0.9102          |
 | LinearSVC                    | 0.9102   | 0.8674   | 0.8285             | 0.9102          |
-| GBTClassifier                | 0.9676   | 0.9646   | 0.9679             | 0.9676          |
+| GBTClassifier                | **0.9676**   | **0.9646**   | **0.9679**             | **0.9676**          |
 
 Project Organization
 ------------
