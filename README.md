@@ -248,5 +248,19 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
+----------------
+Citation
+----------------
+If you use this project in your research, please cite it as follows:
+
+```
+@misc{github,
+  author       = {Truc Mai-Thanh Nguyen, Dat Minh Nguyen},
+  title        = {End to End Data Pipeline for Modern Data Analytics Platform in Retail Banking},
+  year         = {2024},
+  howpublished = {\url{https://github.com/trucnmt/E2ERetailBanking}}
+}
+```
+
 ---------------
 <p><small>DS200.O21 - Big Data Analytic Final Project - Truc Mai-Thanh Nguyen and Dat Minh Nguyen</small></p>
