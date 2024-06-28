@@ -42,26 +42,14 @@ The banking industry is a field that uses big data and is constantly growing und
 -----------------
 ### Problem Statement
 In the context of retail banking, it is crucial to automate the loan approval process to ensure efficient, accurate, and fair decision-making. This involves assessing various attributes of a customer's loan application and determining whether the loan should be approved or rejected.
-* Input: Customer loan approval profile
-* Output: Approved/Rejected
---------------
-Data Pipeline
--------------
-![Pipeline](./Architecture/Retail%20Banking%20System.png)
-
-
----------------
-Entity Relationship Diagram 
----------------
-![ER-Diagram](./ER%20Diagram/ER-Diagram.png)
-
-
+* **Input**: Customer loan approval profile
+* **Output**: Approved/Rejected
 
 -----------------
 Main task in our project
 -----------------
 1. Change Data Capture (CDC)
-2. Build Data Warehouse
+2. Data Warehousing
 3. Analysis and Model Training
 
 Technologies Used
@@ -75,6 +63,20 @@ Technologies Used
 7. PostgreSQL
 8. Docker
 9. Python
+--------------
+Data Pipeline
+-------------
+![Pipeline](./Architecture/Retail%20Banking%20System.png)
+
+
+---------------
+Entity Relationship Diagram 
+---------------
+![ER-Diagram](./ER%20Diagram/ER-Diagram.png)
+
+
+
+
 ---------------
 
 
@@ -138,7 +140,6 @@ Project Organization
 
 ```
 └── 📁E2ERetailBanking
-    └── .env
     └── 📁Architecture
         └── Change Data Capture.pdf
         └── Change Data Capture.png
@@ -159,7 +160,6 @@ Project Organization
         └── order.avsc
         └── transaction.avsc
     └── 📁Dataset
-        └── data_combine_300.csv
         └── 📁Retail-Banking-Demo-Data
             └── completedacct.csv
             └── completedcard.csv
@@ -174,14 +174,8 @@ Project Organization
             └── CRM Reviews.csv
             └── LuxuryLoanPortfolio.csv
         └── Retail-Banking-Demo-Data.zip
-    └── debezium.json
-    └── docker_compose.yml
     └── 📁ER Diagram
         └── ER-Diagram.png
-    └── LICENSE
-    └── Makefile
-    └── README.md
-    └── requirements.txt
     └── 📁Snowflake Data Warehouse
         └── 0 - Postgres - Script.sql
         └── 1 - MODIFY.sql
@@ -235,6 +229,12 @@ Project Organization
             └── spark_utils.py
             └── __init__.py
         └── __init__.py
+    └── debezium.json
+    └── docker_compose.yml
+    └── LICENSE
+    └── Makefile
+    └── README.md
+    └── requirements.txt
 ```
 --------
 License
