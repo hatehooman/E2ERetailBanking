@@ -45,13 +45,13 @@ In the context of retail banking, it is crucial to automate the loan approval pr
 * Input: Customer loan approval profile
 * Output: Approved/Rejected
 --------------
-Retail Banking's Architecture
+Data Pipeline
 -------------
 ![Pipeline](./Architecture/Retail%20Banking%20System.png)
 
 
 ---------------
-Entity Relationship Diagram of Retail Banking Database
+Entity Relationship Diagram 
 ---------------
 ![ER-Diagram](./ER%20Diagram/ER-Diagram.png)
 
