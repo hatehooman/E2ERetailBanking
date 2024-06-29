@@ -66,7 +66,7 @@
         "table_name": "loan"
       },
       {
-        "kafka_topic": "postgres.public.\"order\"",
+        "kafka_topic": "postgres.public.c_order",
         "kafka_bootstrap_servers": ["localhost:29092"],
         "avro_schema_path": "./Avro Schema/order.avsc",
         "snowflake_user": "trucnmt",
@@ -76,7 +76,7 @@
         "snowflake_database": "POSTGRES",
         "snowflake_schema": "PUBLIC",
         "sql_file_path": "./Postgres/order.sql",
-        "table_name": "order"
+        "table_name": "c_order"
       },
       {
         "kafka_topic": "postgres.public.transaction",
@@ -140,7 +140,7 @@
         "snowflake_warehouse": "COMPUTE_WH",
         "snowflake_database": "POSTGRES",
         "snowflake_schema": "PUBLIC",
-        "sql_file_path": "./Postgres/crmevents.sql",
+        "sql_file_path": "./Postgres/CRMCallCenterLogs.sql",
         "table_name": "CRMCallCenterLogs"
       }
     ]
