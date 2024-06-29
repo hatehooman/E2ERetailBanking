@@ -21,7 +21,7 @@ class CDCExtractor:
 
     def extract_changes(self):
         return self.consumer
-
+import decimal
 class CDCTransformer:
     def __init__(self, config):
         self.schema = avro.schema.parse(open(config['avro_schema_path'], "rb").read())
@@ -58,7 +58,7 @@ class CDCTransformer:
                 logger.error(f"Invalid date found: {decoded_message[date_field]}")
 
     def transform_changes(self, changes):
-        date_fields = ['parseddate', 'Date_recieved', 'Date', 'fulldate']
+        date_fields = ['parseddate', 'Date Recieved', 'Date', 'fulldate']
         for msg in changes:
             decoded_message = self.decode(msg.value)
             if decoded_message:
