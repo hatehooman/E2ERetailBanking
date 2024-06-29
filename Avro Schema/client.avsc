@@ -1,10 +1,10 @@
 {
   "type": "record",
-  "name": "Client",
+  "name": "client",
   "fields": [
     {"name": "client_id", "type": "string"},
     {"name": "sex", "type": "string"},
-    {"name": "fulldate", "type": "string", "logicalType": "date"},
+    {"name": "fulldate","type": {"type": "int", "logicalType": "date"}},
     {"name": "day", "type": "int"},
     {"name": "month", "type": "int"},
     {"name": "year", "type": "int"},

@@ -1,17 +1,17 @@
 {
   "type": "record",
-  "name": "Loan",
+  "name": "loan",
   "fields": [
     {"name": "loan_id", "type": "string"},
     {"name": "account_id", "type": "string"},
-    {"name": "amount", "type": "float"},
+    {"name": "amount", "type": "int"},
     {"name": "duration", "type": "int"},
     {"name": "payments", "type": "int"},
     {"name": "status", "type": "string"},
     {"name": "year", "type": "int"},
     {"name": "month", "type": "int"},
     {"name": "day", "type": "int"},
-    {"name": "fulldate", "type": "string", "logicalType": "date"},
+    {"name": "fulldate", "type": {"type": "int", "logicalType": "date"}},
     {"name": "location", "type": "int"},
     {"name": "purpose", "type": "string"}
   ]

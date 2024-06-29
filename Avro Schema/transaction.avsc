@@ -1,6 +1,6 @@
 {
   "type": "record",
-  "name": "Transaction",
+  "name": "transaction",
   "fields": [
     {"name": "index", "type": "int"},
     {"name": "trans_id", "type": "string"},
@@ -15,7 +15,7 @@
     {"name": "year", "type": "int"},
     {"name": "month", "type": "int"},
     {"name": "day", "type": "int"},
-    {"name": "fulldate", "type": "string", "logicalType": "date"},
+    {"name": "fulldate","type": {"type": "int", "logicalType": "date"}},
     {"name": "fulltime", "type": "string"},
     {"name": "fulldatewithtime", "type": "string"}
   ]

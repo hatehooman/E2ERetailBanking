@@ -2,7 +2,7 @@
   "type": "record",
   "name": "CRMCallCenterLogs",
   "fields": [
-    {"name": "Date_recieved", "type": "string", "logicalType": "date"},
+    {"name": "Date_recieved", "type": {"type": "int", "logicalType": "date"}},
     {"name": "Complaint_id", "type": ["null", "string"], "default": null},
     {"name": "Rand_client", "type": ["null", "string"], "default": null},
     {"name": "Phonefinal", "type": "string"},

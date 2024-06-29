@@ -1,6 +1,6 @@
 {
   "type": "record",
-  "name": "Order",
+  "name": "c_order",
   "fields": [
     {"name": "order_id", "type": "int"},
     {"name": "account_id", "type": "string"},

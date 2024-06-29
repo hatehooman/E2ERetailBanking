@@ -1,6 +1,6 @@
 {
   "type": "record",
-  "name": "District",
+  "name": "district",
   "fields": [
     {"name": "district_id", "type": "int"},
     {"name": "city", "type": "string"},
