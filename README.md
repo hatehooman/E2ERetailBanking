@@ -104,7 +104,6 @@ Change Data Capture
 
 Data Warehouse Architecture
 ----------------
-
 ![DataWarehouse](./Architecture/Data%20Warehouse%20Design.png)
 
 #### Snowflake Data Warehouse Setup Detail
@@ -118,8 +117,28 @@ Data Warehouse Architecture
 | Users       | 3        | UserReporting (belongs to REPORTING ROLE) <br> UserTransform (belongs to TRANSFORM ROLE) <br> UserImport (belongs to IMPORT ROLE)          |
 
 
-Analysis and Model Training with Spark
+Analysis and Model Training with Snowpark
 -----------------
+In this project, we have opted to use `Snowpark` over `PySpark` for our data processing needs. `Snowpark`, integrated within the `Snowflake Data Cloud ecosystem`, offers robust capabilities for procedural data processing directly within Snowflake. This choice was driven by our focus on leveraging Snowflake's cloud-native architecture and seamless integration with SQL for real-time analytics, data integration, and ETL tasks.
+
+#### Snowpark vs PySpark: Feature Comparison
+
+| Feature               | Snowpark                                          | PySpark                                      |
+|-----------------------|---------------------------------------------------|----------------------------------------------|
+| **Primary Use Case**  | Data processing within Snowflake                   | General-purpose big data processing          |
+| **Ecosystem**         | Snowflake Data Cloud                               | Apache Spark                                 |
+| **Primary Language**  | Scala, Java (supports Python through Java)         | Python                                       |
+| **Integration**       | Tight integration with Snowflake                   | Standalone or integrates with various data sources |
+| **SQL Support**       | Yes, integrates procedural logic with SQL          | Yes, through Spark SQL                       |
+| **Programming Models**| Procedural (Scala/Java), SQL                       | Functional (Python)                          |
+| **Scalability**       | Leveraging Snowflake's scalability and performance| Distributed computing model                  |
+| **ML and Analytics**  | Limited ML capabilities (growing ecosystem)       | Extensive MLlib library                      |
+| **Streaming**         | Developing capabilities                           | Strong support through Spark Streaming       |
+| **Graph Processing**  | Not directly supported                            | GraphX (within Apache Spark)                 |
+| **Cloud-Native**      | Built for cloud data warehousing                  | Can operate in both cloud and on-premises    |
+| **Community Support** | Growing community within Snowflake ecosystem      | Large and established Apache Spark community|
+| **Use Cases**         | Real-time analytics, data integration, ETL        | Data processing, machine learning, analytics |
+
 1. Data Pre-processing
 2. Analysis
 * Loan Status Label Statistic
