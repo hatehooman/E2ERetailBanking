@@ -1,20 +1,47 @@
-from config.db_config import ConfigLoader
-import snowflake.connector
+# snowflake_connection.py
 
-def create_snowflake_connection(config_path):
-    """
-    Create a connection to Snowflake using the provided configuration file.
-    :param config_path: Path to the YAML configuration file
-    :return: Snowflake connection object
-    """
-    config = ConfigLoader(config_path)
-    db_config = config['snowflake']
-    
-    return snowflake.connector.connect(
-        user=config['user'],
-        password=config['password'],
-        account=config['account'],
-        warehouse=config['warehouse'],
-        database=config['database'],
-        shema=config['schema']
-    )
+from snowflake.connector import connect, ProgrammingError
+
+class SnowflakeConnection:
+    def __init__(self, user, password, account, warehouse, database, schema):
+        self.user = user
+        self.password = password
+        self.account = account
+        self.warehouse = warehouse
+        self.database = database
+        self.schema = schema
+        self.conn = None
+        self.cursor = None
+
+    def connect(self):
+        conn_params = {
+            'user': self.user,
+            'password': self.password,
+            'account': self.account,
+            'warehouse': self.warehouse,
+            'database': self.database,
+            'schema': self.schema
+        }
+        try:
+            self.conn = connect(**conn_params)
+            self.cursor = self.conn.cursor()
+            print("Connected to Snowflake")
+        except ProgrammingError as e:
+            print(f"Error connecting to Snowflake: {e}")
+
+    def close(self):
+        try:
+            if self.cursor:
+                self.cursor.close()
+            if self.conn:
+                self.conn.close()
+            print("Snowflake connection closed")
+        except ProgrammingError as e:
+            print(f"Error closing Snowflake connection: {e}")
+
+    def execute_query(self, query):
+        try:
+            self.cursor.execute(query)
+            print(f"Executed query: {query}")
+        except ProgrammingError as e:
+            print(f"Error executing query: {e}")
