@@ -46,11 +46,13 @@ In the context of retail banking, it is crucial to automate the loan approval pr
 * **Output**: Approved/Rejected
 
 -----------------
-Main task in our project
+Main task in our project 
 -----------------
 1. Change Data Capture (CDC)
 2. Data Warehousing
 3. Analysis and Model Training
+
+Video Demo CDC & Set Up Warehouse in [here.](https://drive.google.com/drive/u/0/folders/1ALpr_ynljZPSVI5ec3WfbT3Ytvbg3FqM)
 
 Technologies Used
 ----------------
@@ -218,7 +220,6 @@ Project Organization
         └── 📁Warehouse
     └── 📁src
         └── 📁cdc
-            └── cdc.py
             └── cdc_extractor.py
             └── cdc_handler.py
             └── cdc_kafka_list_topic.py
@@ -228,7 +229,6 @@ Project Organization
         └── 📁config
             └── config_cdc.json
         └── 📁data_warehouse
-            └── .gitignore
             └── dw_etl.py
             └── dw_snowflake_connection.py
             └── __init__.py
