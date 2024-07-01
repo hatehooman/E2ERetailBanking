@@ -8,6 +8,7 @@ Put all the .sql script which we have provide in `./Snowflake Data Warehouse` fo
 - `3 - TRANSFORM RESOURCE.sql`: Set up TRANSFORM WAREHOUSE.
 - `4 - REPORTING RESOURCE.sql`: Set up REPORTING WAREHOUSE.
 - `5 - RESOURCE MONITOR.sql`: Handle credit usage & abort.
+- `6 - ETL.sql`: Extract from RAW, Transform in CLEAN, send cleaned data to REPORTING.
 
 ### After set up, we have 3-stage Data Warehouse which show below:
      
@@ -17,7 +18,7 @@ Put all the .sql script which we have provide in `./Snowflake Data Warehouse` fo
 ![RAW](./Warehouse/1.1%20-%20RAW.png)
 ### 1.2. SCHEMA: STAGING.CLEAN
 ![CLEAN](./Warehouse/1.2%20-%20CLEAN.png)
-### 2. PROB DATABASE
+### 2. PROD DATABASE
 ![PROD](./Warehouse/2%20-%20PROD%20DETAIL.png)
 ### 2.1. SCHEMA: PROD.REPORTING
 ![REPORTING](./Warehouse/2.1%20-%20REPORTING.png)
