@@ -54,20 +54,19 @@ Main task in our project
 
 Technologies Used
 ----------------
-1. Apache Spark
-2. Apache Kafka
-3. Apache ZooKeeper
-4. Apache Avro
-5. Debezium Connector
-6. Snowflake - Cloud Data Warehouse
-8. Snowpark
-9. PostgreSQL
-10. Docker
-11. Python
+1. Apache Kafka
+2. Apache ZooKeeper
+3. Apache Avro
+4. Debezium Connector
+5. Snowflake - Cloud Data Warehouse
+6. Snowpark
+7. PostgreSQL
+8. Docker
+9. Python
 --------------
 Data Pipeline
 -------------
-![Pipeline](./Architecture/Retail%20Banking%20System%20Snowpark.png)
+![Pipeline](./Architecture/Retail%20Banking%20System.png)
 
 
 ---------------
@@ -141,19 +140,20 @@ In this project, we have opted to use `Snowpark` over `PySpark` for our data pro
 | **Use Cases**         | Real-time analytics, data integration, ETL        | Data processing, machine learning, analytics |
 
 1. Data Pre-processing
+
 2. Analysis
 * Loan Status Label Statistic
 ![LabelStat](./Architecture/Loan_Status_Label_Statistic.png)
 3. Evaluation
 
-| Model                        | Accuracy | F1 Score | Weighted Precision | Weighted Recall |
-|------------------------------|----------|----------|--------------------|-----------------|
-| LogisticRegression           | 0.9128   | 0.8822   | 0.8884             | 0.9128          |
-| DecisionTreeClassifier       | 0.9374   | 0.9234   | 0.9369             | 0.9374          |
-| RandomForestClassifier       | 0.9266   | 0.9031   | 0.9306             | 0.9266          |
-| MultilayerPerceptronClassifier | 0.9102   | 0.8674   | 0.8285             | 0.9102          |
-| LinearSVC                    | 0.9102   | 0.8674   | 0.8285             | 0.9102          |
-| GBTClassifier                | **0.9676**   | **0.9646**   | **0.9679**             | **0.9676**          |
+| Model                      | F1-macro | Accuracy | Precision | Recall |
+|----------------------------|----------|----------|-----------|--------|
+| KNeighborsClassifier       | **0.9881**   | **0.9881**   | **0.9884**    | **0.9882** |
+| DecisionTreeClassifier     | 0.9542   | 0.9543   | 0.9565    | 0.9543 |
+| GradientBoostingClassifier | 0.9483   | 0.9484   | 0.9488    | 0.9484 |
+| RandomForestClassifier     | 0.9924   | 0.9924   | 0.9924    | 0.9924 |
+| RidgeClassifier            | 0.7113   | 0.7114   | 0.7116    | 0.7114 |
+| LogisticRegression         | 0.6726   | 0.6730   | 0.6736    | 0.6730 |
 
 Project Organization
 ------------
