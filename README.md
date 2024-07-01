@@ -66,7 +66,7 @@ Technologies Used
 --------------
 Data Pipeline
 -------------
-![Pipeline](./Architecture/Retail%20Banking%20System.png)
+![Pipeline](./Architecture/Retail%20Banking%20System%20Snowpark.png)
 
 
 ---------------
