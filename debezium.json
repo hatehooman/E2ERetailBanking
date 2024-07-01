@@ -9,8 +9,8 @@
     "database.password": "thanhtruc28",
     "database.dbname": "retailbanking",
     "database.server.name": "postgres",
-    "table.include.list": "public.card, public.account, public.client, public.disposition, public.district, public.loan, public.\"order\", public.CRMCallCenterLogs, public.crmreviews, public.crmevents, public.transaction",
-    "table.whitelist": "public.card, public.account, public.client, public.disposition, public.district, public.loan, public.\"order\", public.CRMCallCenterLogs, public.crmreviews, public.crmevents, public.transaction",
+    "table.include.list": "public.card, public.account, public.client, public.disposition, public.district, public.loan, public.c_order, public.crmcallcenterlogs, public.crmreviews, public.crmevents, public.c_transaction",
+    "table.whitelist": "public.card, public.account, public.client, public.disposition, public.district, public.loan, public.c_order, public.crmcallcenterlogs, public.crmreviews, public.crmevents, public.c_transaction",
     "topic.prefix": "topic_retailbanking"
   }
 }
