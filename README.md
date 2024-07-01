@@ -140,11 +140,20 @@ In this project, we have opted to use `Snowpark` over `PySpark` for our data pro
 | **Use Cases**         | Real-time analytics, data integration, ETL        | Data processing, machine learning, analytics |
 
 1. Data Pre-processing
-
-2. Analysis
+* Handling Missing Data:
+  + Remove columns with more than 80% missing values.
+  + Replace missing values with appropriate alternatives.
+* Normalization:
+  + Standardize data to the correct data format.
+* Creating New Features:
+  + According to different levels.
+  + Calculate based on different units, e.g., 2:30-4:10 -> 100m = 6000s.
+  + Drop Duplicates.
+* Dimensionality Reduction:
+  + Remove unnecessary columns.
 * Loan Status Label Statistic
 ![LabelStat](./Architecture/Loan_Status_Label_Statistic.png)
-3. Evaluation
+2. Modeling
 
 | Model                      | F1-macro | Accuracy | Precision | Recall |
 |----------------------------|----------|----------|-----------|--------|
