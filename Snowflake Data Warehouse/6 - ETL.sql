@@ -4,11 +4,14 @@ USE WAREHOUSE IMPORT_WH;
 USE DATABASE STAGING;
 USE SCHEMA RAW;
 
--- Example query to select data from ACCOUNT (optional)
+-- Example queries to select data (optional)
 SELECT * FROM ACCOUNT;
 SELECT * FROM C_TRANSACTION;
 SELECT * FROM C_ORDER;
 SELECT * FROM LOAN;
+SELECT * FROM DISPOSITION;
+SELECT * FROM CARD;
+
 -- Switch to the CLEAN schema for data transformation
 USE SCHEMA CLEAN;
 
@@ -44,10 +47,10 @@ SELECT
 FROM
     RAW.C_ORDER;
 
--- Verify the CLEAN.ORDER table
+-- Verify the CLEAN.C_ORDER table
 SELECT * FROM CLEAN.C_ORDER;
 
--- Create the CLEAN.TRANSACTION table
+-- Create the CLEAN.C_TRANSACTION table
 CREATE OR REPLACE TABLE CLEAN.C_TRANSACTION AS
 SELECT
     trans_id,
@@ -74,11 +77,55 @@ FROM
 -- Verify the CLEAN.C_TRANSACTION table
 SELECT * FROM CLEAN.C_TRANSACTION;
 
+-- Create the CLEAN.DISPOSITION table
+CREATE OR REPLACE TABLE CLEAN.DISPOSITION AS
+SELECT
+    disp_id,
+    client_id,
+    account_id,
+    type AS disp_type
+FROM
+    RAW.DISPOSITION;
+
+-- Verify the CLEAN.DISPOSITION table
+SELECT * FROM CLEAN.DISPOSITION;
+
+-- Create the CLEAN.ACCOUNT table
+CREATE OR REPLACE TABLE CLEAN.ACCOUNT AS
+SELECT
+    account_id,
+    district_id,
+    frequency AS account_frequency,
+    -- Drop parseddate if not needed
+    year AS account_year,
+    month AS account_month,
+    day AS account_day
+FROM
+    RAW.ACCOUNT;
+
+-- Verify the CLEAN.ACCOUNT table
+SELECT * FROM CLEAN.ACCOUNT;
+
+-- Create the CLEAN.CARD table
+CREATE OR REPLACE TABLE CLEAN.CARD AS
+SELECT
+    card_id,
+    disp_id,
+    type AS card_type,
+    year AS card_year,
+    month AS card_month,
+    day AS card_day
+    -- Drop fulldate if not needed
+FROM
+    RAW.CARD;
+
+-- Verify the CLEAN.CARD table
+SELECT * FROM CLEAN.CARD;
+
 -- Move the transformed tables to PROD.REPORTING
--- Set the appropriate role for production schema access
+-- Set the appropriate role and warehouse for production schema access
 USE ROLE TRANSFORM_ROLE;
 USE WAREHOUSE ETL_WH;
--- Switch to the production database and schema
 USE DATABASE STAGING;
 USE SCHEMA CLEAN;
 
@@ -86,18 +133,33 @@ USE SCHEMA CLEAN;
 CREATE OR REPLACE TABLE PROD.REPORTING.LOAN AS
 SELECT * FROM STAGING.CLEAN.LOAN;
 
--- Move the CLEAN.ORDER table to PROD.REPORTING
+-- Move the CLEAN.C_ORDER table to PROD.REPORTING
 CREATE OR REPLACE TABLE PROD.REPORTING.C_ORDER AS
 SELECT * FROM STAGING.CLEAN.C_ORDER;
 
--- Move the CLEAN.TRANSACTION table to PROD.REPORTING
+-- Move the CLEAN.C_TRANSACTION table to PROD.REPORTING
 CREATE OR REPLACE TABLE PROD.REPORTING.C_TRANSACTION AS
 SELECT * FROM STAGING.CLEAN.C_TRANSACTION;
 
+-- Move the CLEAN.DISPOSITION table to PROD.REPORTING
+CREATE OR REPLACE TABLE PROD.REPORTING.DISPOSITION AS
+SELECT * FROM STAGING.CLEAN.DISPOSITION;
+
+-- Move the CLEAN.ACCOUNT table to PROD.REPORTING
+CREATE OR REPLACE TABLE PROD.REPORTING.ACCOUNT AS
+SELECT * FROM STAGING.CLEAN.ACCOUNT;
+
+-- Move the CLEAN.CARD table to PROD.REPORTING
+CREATE OR REPLACE TABLE PROD.REPORTING.CARD AS
+SELECT * FROM STAGING.CLEAN.CARD;
+
+-- Verify the moved tables in PROD.REPORTING
 USE ROLE REPORTING_ROLE;
 USE WAREHOUSE REPORTING_WH;
 USE DATABASE PROD;
--- Verify the moved tables in PROD.REPORTING
 SELECT * FROM REPORTING.LOAN;
 SELECT * FROM REPORTING.C_ORDER;
 SELECT * FROM REPORTING.C_TRANSACTION;
+SELECT * FROM REPORTING.DISPOSITION;
+SELECT * FROM REPORTING.ACCOUNT;
+SELECT * FROM REPORTING.CARD;
