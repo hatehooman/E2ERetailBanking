@@ -4,7 +4,7 @@ CREATE TABLE CRMEvents(
 	Sub_product	varchar(50),
 	Issue	varchar(50) not null,
 	Sub_issue	varchar(20),
-	Consumer_complaint_narrative 	varchar,
+	Consumer_complaint_narrative varchar,
 	Tags varchar(50),
 	Consumer_consent_provided varchar(20),
 	Submitted_via	varchar(20) not null,

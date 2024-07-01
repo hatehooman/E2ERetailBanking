@@ -36,10 +36,15 @@ VALUES
 (2, 'A00000002', 'Bank B', 987654321, 500.0, 'Deposit');
 
 /*=================== Transaction ==============*/
-INSERT INTO transaction ("index", trans_id, account_id, "type", operation, amount, balance, k_symbol, bank, account, year, month, day, fulldate, fulltime, fulldatewithtime)
+-- INSERT INTO transaction (index, trans_id, account_id, type, operation, amount, balance, k_symbol, bank, account, year, month, day, fulldate, fulltime, fulldatewithtime)
+-- VALUES
+-- (1, 'T00000001', 'A00000001', 'Credit', 'Online', 1000.0, 2000.0, 'Deposit', 'Bank A', '123456789', 2024, 6, 25, '2024-06-25', '12:00:00', '2024-06-25 12:00:00'),
+-- (2, 'T00000002', 'A00000002', 'Debit', 'ATM', 500.0, 1500.0, 'Withdrawal', 'Bank B', '987654321', 2024, 6, 24, '2024-06-24', '15:00:00', '2024-06-24 15:00:00');
+
+INSERT INTO c_transaction (type, trans_id)
 VALUES
-(1, 'T00000001', 'A00000001', 'Credit', 'Online', 1000.0, 2000.0, 'Deposit', 'Bank A', '123456789', 2024, 6, 25, '2024-06-25', '12:00:00', '2024-06-25 12:00:00'),
-(2, 'T00000002', 'A00000002', 'Debit', 'ATM', 500.0, 1500.0, 'Withdrawal', 'Bank B', '987654321', 2024, 6, 24, '2024-06-24', '15:00:00', '2024-06-24 15:00:00');
+('Credit','T00000001'),
+('Debit','T00000002');
 
 
 

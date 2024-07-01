@@ -10,8 +10,8 @@ drop table if exists loan CASCADE;
 drop table if exists c_order CASCADE;
 drop table if exists CRMCallCenterLogs CASCADE;
 drop table if exists crmreviews CASCADE;
-drop table if exists crmevents CASCADE;
-drop table if exists transaction CASCADE;
+drop table if exists CRMEvents CASCADE;
+drop table if exists c_transaction CASCADE;
 
 
 /*===================Account==================*/
@@ -25,7 +25,7 @@ drop table if exists transaction CASCADE;
 CREATE TABLE account (
 	account_id varchar(20) not null primary key,
 	district_id integer not null,
-	frequency varchar(20) not null,
+	frequency varchar(50) not null,
 	parseddate date not null,
 	year integer not null,
 	month integer not null,
@@ -132,23 +132,22 @@ CREATE TABLE c_order(
 
 
 /*===================Transaction===================*/
-CREATE TABLE transaction(
-	index int,
-	trans_id	varchar(50) not null primary key,
-	account_id	varchar(50) not null,
+CREATE TABLE c_transaction(
+	trans_id	varchar not null primary key,
+	account_id	varchar not null,
 	type	varchar(50) not null,
-	operation	varchar(50),
+	operation	varchar,
 	amount	float not null,
 	balance	float not null,
-	k_symbol	varchar(50),
-	bank	varchar(50),
-	account	varchar(50),
+	k_symbol	varchar,
+	bank	varchar,
+	account	varchar,
 	year	integer not null,
 	month	integer not null,
 	day	integer not null,
 	fulldate	date not null,
-	fulltime	varchar(50) not null,
-	fulldatewithtime	varchar(50) not null
+	fulltime	varchar not null,
+	fulldatewithtime	varchar not null
 );
 /*===================Call Center Logs===================*/
 CREATE TABLE CRMCallCenterLogs (
@@ -157,7 +156,7 @@ CREATE TABLE CRMCallCenterLogs (
 	Rand_client	varchar(50) null,
 	Phonefinal	varchar(50) not null,
 	Vru_line	varchar(50) null,
-	Call_id	int null,
+	Call_id	integer null,
 	Priority	integer null,
 	Type	varchar(50) null,
 	Outcome	varchar(50) null,
@@ -192,74 +191,33 @@ CREATE TABLE CRMEvents(
 	Complaint_ID	varchar(20) not null primary key,
 	Client_ID	varchar(20) not null
 );
-/*=============================================CONSTRAINT============================================================*/
-ALTER TABLE
-	transaction
-ADD
-	FOREIGN KEY (account_id) REFERENCES account(account_id) on delete cascade;
-
-ALTER TABLE
-	loan
-ADD
-	FOREIGN KEY (account_id) references account(account_id) on delete cascade;
-
-ALTER TABLE
-	transaction
-ADD
-	FOREIGN KEY (account_id) REFERENCES account(account_id) on delete cascade;
-
-ALTER TABLE
-	CRMEvents
-ADD
-	FOREIGN KEY (Client_ID) REFERENCES client(client_id) on delete cascade;
-
-ALTER TABLE
-	CRMCallCenterLogs
-ADD
-	FOREIGN KEY (Complaint_id) REFERENCES CRMEvents(Complaint_ID) on delete cascade;
-
-ALTER TABLE
-	c_order
-ADD
-	FOREIGN KEY (account_id) references account(account_id) on delete cascade;
-
-ALTER TABLE
-	account
-ADD
-	foreign key(district_id) references district(district_id) on delete cascade;
-
-ALTER TABLE
-	card
-ADD
-	foreign key(disp_id) references disposition(disp_id) on delete cascade;
-
-ALTER TABLE
-	disposition
-ADD
-	foreign key (client_id) references client(client_id) on delete cascade;
 
 
-ALTER TABLE
-	client
-ADD
-	foreign key (district_id) references district(district_id) on delete cascade;
-
-ALTER TABLE
-	CRMReviews
-ADD
-	foreign key (district_id) references district(district_id) on delete cascade;
-
-ALTER TABLE CRMReviews REPLICA IDENTITY FULL;
+ALTER TABLE crmreviews REPLICA IDENTITY FULL;
 ALTER TABLE crmcallcenterlogs REPLICA IDENTITY FULL;
 ALTER TABLE district REPLICA IDENTITY FULL;
 ALTER TABLE account REPLICA IDENTITY FULL;
 ALTER TABLE client REPLICA IDENTITY FULL;
 ALTER TABLE loan REPLICA IDENTITY FULL;
 ALTER TABLE c_order REPLICA IDENTITY FULL;
-ALTER TABLE transaction REPLICA IDENTITY FULL;
+ALTER TABLE c_transaction REPLICA IDENTITY FULL;
 ALTER TABLE disposition REPLICA IDENTITY FULL;
 ALTER TABLE card REPLICA IDENTITY FULL;
 ALTER TABLE crmevents REPLICA IDENTITY FULL;
 
+COPY district FROM '/completeddistrict.csv' DELIMITER ',' CSV HEADER;
+COPY account FROM '/completedacct.csv' DELIMITER ',' CSV HEADER;
+COPY client FROM '/completedclient.csv' DELIMITER ',' CSV HEADER;
+COPY CRMReviews FROM '/CRM Reviews.csv' DELIMITER ',' CSV HEADER ENCODING 'LATIN1';
+
+COPY c_order FROM '/completedorder.csv' DELIMITER ',' CSV HEADER;
+COPY loan FROM '/completedloan.csv' DELIMITER ',' CSV HEADER;
+
+COPY CRMEvents FROM '/CRM Events.csv' DELIMITER ',' CSV HEADER;
+COPY disposition FROM '/completeddisposition.csv' DELIMITER ',' CSV HEADER;
+
+COPY card FROM '/completedcard.csv' DELIMITER ',' CSV HEADER;
+COPY CRMCallCenterLogs FROM '/CRM Call Center Logs.csv' DELIMITER ',' CSV HEADER;
+COPY c_transaction FROM '/completedtrans.csv' DELIMITER ',' CSV HEADER;
 
 
