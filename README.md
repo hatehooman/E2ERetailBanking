@@ -159,13 +159,8 @@ Project Organization
 
 ```
 └── 📁E2ERetailBanking
+    └── .env
     └── 📁Architecture
-        └── Change Data Capture.pdf
-        └── Change Data Capture.png
-        └── Data Warehouse Design.pdf
-        └── Data Warehouse Design.png
-        └── Retail Banking System.pdf
-        └── Retail Banking System.png
     └── 📁Avro Schema
         └── account.avsc
         └── call_center_logs.avsc
@@ -192,9 +187,30 @@ Project Organization
             └── CRM Events.csv
             └── CRM Reviews.csv
             └── LuxuryLoanPortfolio.csv
+            └── trans10.csv
         └── Retail-Banking-Demo-Data.zip
+    └── debezium.json
+    └── docker_compose.yml
     └── 📁ER Diagram
-        └── ER-Diagram.png
+    └── LICENSE
+    └── Makefile
+    └── 📁Notebooks
+    └── 📁Postgres
+        └── account.sql
+        └── card.sql
+        └── client.sql
+        └── CRMCallCenterLogs.sql
+        └── CRMEvents.sql
+        └── CRMReviews.sql
+        └── disposition.sql
+        └── district.sql
+        └── full_table_created.sql
+        └── insert_sample.sql
+        └── loan.sql
+        └── order.sql
+        └── transaction.sql
+    └── README.md
+    └── requirements.txt
     └── 📁Snowflake Data Warehouse
         └── 0 - Postgres - Script.sql
         └── 1 - MODIFY.sql
@@ -202,58 +218,37 @@ Project Organization
         └── 3 - TRANSFORM RESOURCE.sql
         └── 4 - REPORTING RESOURCE.sql
         └── 5 - RESOURCE MONITORS.sql
+        └── 6 - ETL.sql
+        └── README.md
+        └── 📁Warehouse
     └── 📁src
         └── 📁cdc
             └── cdc_extractor.py
             └── cdc_handler.py
+            └── cdc_kafka_list_topic.py
             └── cdc_loader.py
             └── cdc_transformer.py
             └── __init__.py
         └── 📁config
-            └── config.yaml
-            └── config_import.yaml
-            └── config_reporting.yaml
-            └── config_transform.yaml
-            └── db_config.py
-            └── log_config.py
-            └── spark_config.py
-            └── __init__.py
+            └── config_cdc.json
         └── 📁data_warehouse
-            └── dw_loader.py
-            └── dw_queries.py
-            └── dw_schema.sql
+            └── .gitignore
+            └── dw_etl.py
             └── dw_snowflake_connection.py
-            └── dw_transformer.py
             └── __init__.py
-        └── 📁scripts
-            └── run_cdc_pipeline.py
-            └── run_dw_pipeline.py
-            └── run_spark_job.py
-            └── __init__.py
-        └── 📁spark
+        └── 📁model_trainer
             └── .gitignore
             └── spark_job.py
             └── spark_session.py
             └── spark_trainer.py
             └── spark_transformer.py
             └── __init__.py
-            └── 📁__pycache__
-                └── spark_session.cpython-311.pyc
-                └── spark_transformer.cpython-311.pyc
-        └── 📁utils
-            └── db_utils.py
-            └── file_utils.py
-            └── kafka_utils.py
-            └── logger.py
-            └── spark_utils.py
+        └── 📁pipeline
+            └── run_cdc_pipeline.py
+            └── run_dw_pipeline.py
+            └── run_spark_job.py
             └── __init__.py
         └── __init__.py
-    └── debezium.json
-    └── docker_compose.yml
-    └── LICENSE
-    └── Makefile
-    └── README.md
-    └── requirements.txt
 ```
 --------
 License
