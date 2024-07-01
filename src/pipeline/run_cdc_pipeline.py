@@ -2,7 +2,7 @@ import sys
 sys.path.insert(0, 'D:\\Big Data\\DS200\\E2ERetailBanking\\src')
 from concurrent.futures import ThreadPoolExecutor
 from cdc.cdc_handler import CDCHandler
-
+import json
 def main():
     with open('./src/config/config_cdc.json', 'r') as f:
         config_data = json.load(f)
