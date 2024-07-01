@@ -237,14 +237,6 @@ Project Organization
         └── 📁pipeline
             └── run_cdc_pipeline.py
             └── run_dw_pipeline.py
-            └── run_spark_job.py
-            └── __init__.py
-        └── 📁utils
-            └── db_utils.py
-            └── file_utils.py
-            └── kafka_utils.py
-            └── logger.py
-            └── spark_utils.py
             └── __init__.py
         └── __init__.py
 ```
