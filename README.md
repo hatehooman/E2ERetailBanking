@@ -159,7 +159,6 @@ Project Organization
 
 ```
 └── 📁E2ERetailBanking
-    └── .env
     └── 📁Architecture
     └── 📁Avro Schema
         └── account.avsc
@@ -232,12 +231,10 @@ Project Organization
         └── 📁config
             └── config_cdc.json
         └── 📁data_warehouse
-            └── .gitignore
             └── dw_etl.py
             └── dw_snowflake_connection.py
             └── __init__.py
         └── 📁model_trainer
-            └── .gitignore
             └── spark_job.py
             └── spark_session.py
             └── spark_trainer.py
