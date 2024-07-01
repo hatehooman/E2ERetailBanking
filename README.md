@@ -60,9 +60,10 @@ Technologies Used
 4. Apache Avro
 5. Debezium Connector
 6. Snowflake - Cloud Data Warehouse
-7. PostgreSQL
-8. Docker
-9. Python
+8. Snowpark
+9. PostgreSQL
+10. Docker
+11. Python
 --------------
 Data Pipeline
 -------------
@@ -159,6 +160,7 @@ Project Organization
 
 ```
 └── 📁E2ERetailBanking
+    └── .env
     └── 📁Architecture
     └── 📁Avro Schema
         └── account.avsc
@@ -173,20 +175,6 @@ Project Organization
         └── order.avsc
         └── transaction.avsc
     └── 📁Dataset
-        └── 📁Retail-Banking-Demo-Data
-            └── completedacct.csv
-            └── completedcard.csv
-            └── completedclient.csv
-            └── completeddisposition.csv
-            └── completeddistrict.csv
-            └── completedloan.csv
-            └── completedorder.csv
-            └── completedtrans.csv
-            └── CRM Call Center Logs.csv
-            └── CRM Events.csv
-            └── CRM Reviews.csv
-            └── LuxuryLoanPortfolio.csv
-            └── trans10.csv
         └── Retail-Banking-Demo-Data.zip
     └── debezium.json
     └── docker_compose.yml
@@ -235,10 +223,10 @@ Project Organization
             └── dw_snowflake_connection.py
             └── __init__.py
         └── 📁model_trainer
-            └── spark_job.py
-            └── spark_session.py
-            └── spark_trainer.py
-            └── spark_transformer.py
+            └── snowpark_job.py
+            └── snowpark_session.py
+            └── snowpark_trainer.py
+            └── snowpark_transformer.py
             └── __init__.py
         └── 📁pipeline
             └── run_cdc_pipeline.py
@@ -246,6 +234,7 @@ Project Organization
             └── run_spark_job.py
             └── __init__.py
         └── __init__.py
+
 ```
 --------
 License
