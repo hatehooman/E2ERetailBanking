@@ -1,3 +1,10 @@
+-------------------------------------------------------------------------
+
+---------------------------EXTRACT, TRANSFORM---------------------------------------
+
+-------------------------------------------------------------------------
+
+
 -- Set the initial role and warehouse for import
 USE ROLE IMPORT_ROLE;
 USE WAREHOUSE IMPORT_WH;
@@ -5,16 +12,27 @@ USE DATABASE STAGING;
 USE SCHEMA RAW;
 
 -- Example queries to select data (optional)
-SELECT * FROM ACCOUNT;
-SELECT * FROM C_TRANSACTION;
-SELECT * FROM C_ORDER;
-SELECT * FROM LOAN;
-SELECT * FROM DISPOSITION;
-SELECT * FROM CARD;
+-- select * from district limit 10;
+-- SELECT * FROM ACCOUNT LIMIT 10;
+-- SELECT * FROM C_TRANSACTION LIMIT 10;
+-- SELECT * FROM C_ORDER LIMIT 10;
+-- SELECT * FROM LOAN LIMIT 10;
+-- SELECT * FROM DISPOSITION LIMIT 10;
+-- SELECT * FROM CARD LIMIT 10;
 
 -- Switch to the CLEAN schema for data transformation
 USE SCHEMA CLEAN;
+create or replace TABLE CLEAN.DISTRICT as
+select
+	DISTRICT_ID,
+	CITY,
+	STATE_NAME,
+	STATE_ABBREV,
+	REGION,
+	DIVISION,
+from raw.district;
 
+select * from clean.district;
 -- Create the CLEAN.LOAN table
 CREATE OR REPLACE TABLE CLEAN.LOAN AS
 SELECT
@@ -26,6 +44,7 @@ SELECT
     year AS loan_year,
     month AS loan_month,
     day AS loan_day,
+    amount AS loan_amount,
     -- Drop fulldate if not needed
     location AS district_id,
     purpose AS loan_purpose
@@ -122,6 +141,12 @@ FROM
 -- Verify the CLEAN.CARD table
 SELECT * FROM CLEAN.CARD;
 
+-------------------------------------------------------------------------
+
+---------------------------LOAD---------------------------------------
+
+-------------------------------------------------------------------------
+
 -- Move the transformed tables to PROD.REPORTING
 -- Set the appropriate role and warehouse for production schema access
 USE ROLE TRANSFORM_ROLE;
@@ -153,6 +178,9 @@ SELECT * FROM STAGING.CLEAN.ACCOUNT;
 CREATE OR REPLACE TABLE PROD.REPORTING.CARD AS
 SELECT * FROM STAGING.CLEAN.CARD;
 
+
+CREATE OR REPLACE TABLE PROD.REPORTING.DISTRICT AS
+SELECT * FROM STAGING.CLEAN.DISTRICT;
 -- Verify the moved tables in PROD.REPORTING
 USE ROLE REPORTING_ROLE;
 USE WAREHOUSE REPORTING_WH;
@@ -163,3 +191,4 @@ SELECT * FROM REPORTING.C_TRANSACTION;
 SELECT * FROM REPORTING.DISPOSITION;
 SELECT * FROM REPORTING.ACCOUNT;
 SELECT * FROM REPORTING.CARD;
+SELECT * FROM REPORTING.DISTRICT;
