@@ -43,3 +43,5 @@ class CDCHandler:
         changes = self.extractor.extract_changes()
         transformed_changes = self.transformer.transform_changes(changes)
         self.loader.load_changes(transformed_changes)
+
+
