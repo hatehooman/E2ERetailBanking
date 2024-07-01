@@ -4,34 +4,10 @@ from concurrent.futures import ThreadPoolExecutor
 from cdc.cdc_handler import CDCHandler
 
 def main():
-    configs = [
-        {
-            'kafka_topic': "postgres.public.account",
-            'kafka_bootstrap_servers': ["localhost:29092"],
-            'avro_schema_path': "./Avro Schema/account.avsc",
-            'snowflake_user': 'trucnmt',
-            'snowflake_password': 'Thanhtruc28!',
-            'snowflake_account': 'WK90181.ap-southeast-1',
-            'snowflake_warehouse': 'COMPUTE_WH',
-            'snowflake_database': 'POSTGRES',
-            'snowflake_schema': 'PUBLIC',
-            'sql_file_path' : './Postgres/account.sql',
-            'table_name' : 'account'
-        },
-        {
-            'kafka_topic': "postgres.public.district",
-            'kafka_bootstrap_servers': ["localhost:29092"],
-            'avro_schema_path': "./Avro Schema/district.avsc",
-            'snowflake_user': 'trucnmt',
-            'snowflake_password': 'Thanhtruc28!',
-            'snowflake_account': 'WK90181.ap-southeast-1',
-            'snowflake_warehouse': 'COMPUTE_WH',
-            'snowflake_database': 'POSTGRES',
-            'snowflake_schema': 'PUBLIC',
-            'sql_file_path' : './Postgres/district.sql',
-            'table_name' : 'district'
-        }
-    ]
+    with open('./src/config/config_cdc.json', 'r') as f:
+        config_data = json.load(f)
+    
+    configs = config_data['configs']
 
     with ThreadPoolExecutor() as executor:
         for config in configs:
@@ -43,3 +19,4 @@ def run_handler(config):
 
 if __name__ == "__main__":
     main()
+
