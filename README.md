@@ -277,8 +277,8 @@ Citation
 If you use this project in your research, please cite it as follows:
 
 ```
-@misc{github,
-  author       = {Truc Mai-Thanh Nguyen, Dat Minh Nguyen},
+@online{retailbankingtrucdat,
+  author       = {Truc Mai-Thanh Nguyen and Dat Minh Nguyen},
   title        = {End to End Data Pipeline for Modern Data Analytics Platform in Retail Banking},
   year         = {2024},
   howpublished = {\url{https://github.com/trucnmt/E2ERetailBanking}}
