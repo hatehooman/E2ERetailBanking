@@ -160,7 +160,6 @@ Project Organization
 
 ```
 └── 📁E2ERetailBanking
-    └── .env
     └── 📁Architecture
     └── 📁Avro Schema
         └── account.avsc
@@ -175,13 +174,13 @@ Project Organization
         └── order.avsc
         └── transaction.avsc
     └── 📁Dataset
+        └── 📁Retail-Banking-Demo-Data
         └── Retail-Banking-Demo-Data.zip
     └── debezium.json
     └── docker_compose.yml
     └── 📁ER Diagram
     └── LICENSE
     └── Makefile
-    └── 📁Notebooks
     └── 📁Postgres
         └── account.sql
         └── card.sql
@@ -210,6 +209,7 @@ Project Organization
         └── 📁Warehouse
     └── 📁src
         └── 📁cdc
+            └── cdc.py
             └── cdc_extractor.py
             └── cdc_handler.py
             └── cdc_kafka_list_topic.py
@@ -219,22 +219,25 @@ Project Organization
         └── 📁config
             └── config_cdc.json
         └── 📁data_warehouse
+            └── .gitignore
             └── dw_etl.py
             └── dw_snowflake_connection.py
             └── __init__.py
-        └── 📁model_trainer
-            └── snowpark_job.py
-            └── snowpark_session.py
-            └── snowpark_trainer.py
-            └── snowpark_transformer.py
-            └── __init__.py
+        └── 📁modeling
+            └── Snowpark_Model_Training.ipynb
         └── 📁pipeline
             └── run_cdc_pipeline.py
             └── run_dw_pipeline.py
             └── run_spark_job.py
             └── __init__.py
+        └── 📁utils
+            └── db_utils.py
+            └── file_utils.py
+            └── kafka_utils.py
+            └── logger.py
+            └── spark_utils.py
+            └── __init__.py
         └── __init__.py
-
 ```
 --------
 License
