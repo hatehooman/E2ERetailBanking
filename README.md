@@ -16,19 +16,19 @@ Contributors
       <th>Student's ID</th>
       <th>Fullname</th>
       <th>Contact</th>
-      <th>Task Assignment</th>
-    </tr>
-    <tr>
-      <td>21522721</td>
-      <td>Truc Mai-Thanh Nguyen</td>
-      <td>21522721@gm.uit.edu.vn</td>
-      <td>Pipeline, CDC, Data Warehouse</td>
+      <!-- <th>Task Assignment</th> -->
     </tr>
     <tr>
       <td>21521937</td>
-      <td>Dat Minh Nguyen</td>
+      <td>Nguyễn Minh Đạt</td>
       <td>21521937@gm.uit.edu.vn</td>
-      <td>Analysis, Model Training</td>
+      <!-- <td>Analysis, Model Training</td> -->
+    </tr>
+    <tr>
+      <td>21522721</td>
+      <td>Nguyễn Mai Thanh Trúc</td>
+      <td>21522721@gm.uit.edu.vn</td>
+      <!-- <td>Pipeline, CDC, Data Warehouse</td> -->
     </tr>
   </table>
 </div>
@@ -256,7 +256,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ```
-----------------
+<!-- ----------------
 Citation
 ----------------
 If you use this project in your research, please cite it as follows:
@@ -268,7 +268,7 @@ If you use this project in your research, please cite it as follows:
   year         = {2024},
   howpublished = {\url{https://github.com/trucnmt/E2ERetailBanking}}
 }
-```
+``` -->
 
 ---------------
 <p><small>DS200.O21 - Big Data Analytic Final Project - Truc Mai-Thanh Nguyen and Dat Minh Nguyen</small></p>
