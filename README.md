@@ -1,7 +1,7 @@
 <h1 align="center">Customer Loan Approval Prediction in Retail Banking System</h1>
 
 <p align="center"><small>Faculty of Information Science and Engineering, University of Information Technology, Ho Chi Minh City, Viet Nam <br>
-Vietnam National University, Ho Chi Minh City, Viet Nam <br> <strong>Instructor: PhD. Trong-Hop Do</strong> 
+Vietnam National University, Ho Chi Minh City, Viet Nam <br> <strong>DS200.O21</strong> 
 </small></p>
 
 
