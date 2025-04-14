@@ -1,4 +1,4 @@
-<h1 align="center">Customer Loan Approval Prediction in Retail Banking System</h1>
+<h1 align="center">End to End Data Pipeline for Modern Data Analytics Platform in Retail Banking</h1>
 
 
 
