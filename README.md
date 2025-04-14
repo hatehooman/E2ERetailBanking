@@ -1,40 +1,7 @@
 <h1 align="center">Customer Loan Approval Prediction in Retail Banking System</h1>
 
-<p align="center"><small>Faculty of Information Science and Engineering, University of Information Technology, Ho Chi Minh City, Viet Nam <br>
-Vietnam National University, Ho Chi Minh City, Viet Nam <br> <strong>DS200.O21</strong> 
-</small></p>
 
 
-
-
-Contributors
---------------------- 
-
-<div align="center">
-  <table>
-    <tr>
-      <th>Student's ID</th>
-      <th>Fullname</th>
-      <th>Contact</th>
-      <!-- <th>Task Assignment</th> -->
-    </tr>
-    <tr>
-      <td>21521937</td>
-      <td>Nguyễn Minh Đạt</td>
-      <td>21521937@gm.uit.edu.vn</td>
-      <!-- <td>Analysis, Model Training</td> -->
-    </tr>
-    <tr>
-      <td>21522721</td>
-      <td>Nguyễn Mai Thanh Trúc</td>
-      <td>21522721@gm.uit.edu.vn</td>
-      <!-- <td>Pipeline, CDC, Data Warehouse</td> -->
-    </tr>
-  </table>
-</div>
-
-
-----------------
 Description
 ----------------
 The banking industry is a field that uses big data and is constantly growing under the push of the big data era. Exploring advanced big data analytics tools such as data mining (DM) techniques is key for the banking industry, which aims to reveal valuable information from huge volumes of data and achieve data management. In this project, we will build a Big Data Analytics System in the Retail Banking Industry.
@@ -246,7 +213,7 @@ License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
 The MIT License (MIT)
-Copyright (c) 2024, Truc Mai-Thanh Nguyen and Dat Minh Nguyen
+Copyright (c) 2024
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -256,19 +223,5 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ```
-<!-- ----------------
-Citation
-----------------
-If you use this project in your research, please cite it as follows:
-
-```
-@online{retailbankingtrucdat,
-  author       = {Truc Mai-Thanh Nguyen and Dat Minh Nguyen},
-  title        = {End to End Data Pipeline for Modern Data Analytics Platform in Retail Banking},
-  year         = {2024},
-  howpublished = {\url{https://github.com/trucnmt/E2ERetailBanking}}
-}
-``` -->
 
 ---------------
-<p><small>DS200.O21 - Big Data Analytic Final Project - Truc Mai-Thanh Nguyen and Dat Minh Nguyen</small></p>
