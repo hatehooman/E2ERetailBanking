@@ -171,7 +171,7 @@ Project Organization
             └── dw_snowflake_connection.py
             └── __init__.py
         └── 📁modeling
-            └── Snowpark_Model_Training.ipynb
+            └── Snowpark_Model_Training.py
         └── 📁pipeline
             └── run_cdc_pipeline.py
             └── run_dw_pipeline.py
