@@ -58,18 +58,6 @@ Change Data Capture
 * **Data Ingestion**: Kafka
 * **Data Storage (Target)**: Snowflake Data Warehouse
 
-#### Comparison of Change Data Capture (CDC), Batch Processing, and Real-Time Processing
-
-| Feature          | Change Data Capture (CDC)       | Batch Processing                      | Real-Time Processing                  |
-|------------------|---------------------------------|---------------------------------------|---------------------------------------|
-| **Latency**      | Near real-time                  | High (scheduled intervals)            | Very low (milliseconds)               |
-| **Granularity**  | Row-level changes               | Large batches                         | Individual events or small batches    |
-| **Complexity**   | Moderate to high                | Low to moderate                       | High                                  |
-| **Resource Usage** | Moderate                      | High during batch windows             | High                                  |
-| **Use Cases**    | Data sync, real-time analytics  | Reporting, data warehousing           | Fraud detection, live dashboards      |
-| **Advantages**   | Efficient data transfer         | Simple and efficient for large data   | Immediate insights and actions        |
-| **Disadvantages**| Complexity, potential latency   | High latency, peak resource needs     | Complexity, cost                      |
-
 
 Data Warehouse Architecture
 ----------------
@@ -90,23 +78,6 @@ Analysis and Model Training with Snowpark
 -----------------
 In this project, we have opted to use `Snowpark` over `PySpark` for our data processing needs. `Snowpark`, integrated within the `Snowflake Data Cloud ecosystem`, offers robust capabilities for procedural data processing directly within Snowflake. This choice was driven by our focus on leveraging Snowflake's cloud-native architecture and seamless integration with SQL for real-time analytics, data integration, and ETL tasks.
 
-#### Snowpark vs PySpark: Feature Comparison
-
-| Feature               | Snowpark                                          | PySpark                                      |
-|-----------------------|---------------------------------------------------|----------------------------------------------|
-| **Primary Use Case**  | Data processing within Snowflake                   | General-purpose big data processing          |
-| **Ecosystem**         | Snowflake Data Cloud                               | Apache Spark                                 |
-| **Primary Language**  | Scala, Java (supports Python through Java)         | Python                                       |
-| **Integration**       | Tight integration with Snowflake                   | Standalone or integrates with various data sources |
-| **SQL Support**       | Yes, integrates procedural logic with SQL          | Yes, through Spark SQL                       |
-| **Programming Models**| Procedural (Scala/Java), SQL                       | Functional (Python)                          |
-| **Scalability**       | Leveraging Snowflake's scalability and performance| Distributed computing model                  |
-| **ML and Analytics**  | Limited ML capabilities (growing ecosystem)       | Extensive MLlib library                      |
-| **Streaming**         | Developing capabilities                           | Strong support through Spark Streaming       |
-| **Graph Processing**  | Not directly supported                            | GraphX (within Apache Spark)                 |
-| **Cloud-Native**      | Built for cloud data warehousing                  | Can operate in both cloud and on-premises    |
-| **Community Support** | Growing community within Snowflake ecosystem      | Large and established Apache Spark community|
-| **Use Cases**         | Real-time analytics, data integration, ETL        | Data processing, machine learning, analytics |
 
 1. Data Pre-processing
 * Handling Missing Data:
@@ -213,7 +184,7 @@ License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
 The MIT License (MIT)
-Copyright (c) 2024
+Copyright (c) 2024 Truc Nguyen
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
