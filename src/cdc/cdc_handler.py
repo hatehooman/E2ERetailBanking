@@ -1,8 +1,11 @@
-from cdc_extractor import CDCExtractor
-from cdc_transformer import CDCTransformer
-from cdc_loader import CDCDataLoader
 import snowflake.connector
+from cdc.cdc_extractor import CDCExtractor
+from cdc.cdc_transformer import CDCTransformer
+from cdc.cdc_loader import CDCDataLoader
+import logging
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 class CDCHandler:
     def __init__(self, config):
         self.config = config
@@ -18,25 +21,27 @@ class CDCHandler:
                 password=self.config['snowflake_password'],
                 account=self.config['snowflake_account'],
                 warehouse=self.config['snowflake_warehouse'],
-                database='snowflake',
-                schema='public'
+                database=self.config['snowflake_database'],
+                schema=self.config['snowflake_schema']
             )
 
             # Create the database if it doesn't exist
-            conn.cursor().execute("CREATE DATABASE IF NOT EXISTS POSTGRES")
+            conn.cursor().execute(f"CREATE DATABASE IF NOT EXISTS {self.config['snowflake_database']}")
 
             # Use the database
-            conn.cursor().execute("USE DATABASE POSTGRES")
+            conn.cursor().execute(f"USE DATABASE {self.config['snowflake_database']}")
 
             # Create the schema if it doesn't exist
-            conn.cursor().execute("CREATE SCHEMA IF NOT EXISTS PUBLIC")
+            conn.cursor().execute(f"CREATE SCHEMA IF NOT EXISTS {self.config['snowflake_schema']}")
 
-            print("Database and schema are ready.")
+            logger.info("Database and schema are ready.")
             conn.close()
         except Exception as e:
-            print("Error creating database and schema:", e)
+            logger.error(f"Error creating database and schema: {e}")
 
     def process_changes(self):
         changes = self.extractor.extract_changes()
         transformed_changes = self.transformer.transform_changes(changes)
         self.loader.load_changes(transformed_changes)
+
+

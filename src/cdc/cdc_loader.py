@@ -1,47 +1,59 @@
 import snowflake.connector
+import logging
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 class CDCDataLoader:
     def __init__(self, config):
         self.conn = snowflake.connector.connect(
-            user=config['snowflake']['snowflake_user'],
-            password=config['snowflake']['snowflake_password'],
-            account=config['snowflake']['snowflake_account'],
-            warehouse=config['snowflake']['snowflake_warehouse'],
-            database=config['snowflake']['snowflake_database'],
-            schema=config['snowflake']['snowflake_schema']
+            user=config['snowflake_user'],
+            password=config['snowflake_password'],
+            account=config['snowflake_account'],
+            warehouse=config['snowflake_warehouse'],
+            database=config['snowflake_database'],
+            schema=config['snowflake_schema']
         )
+        self.table_name = config['table_name']
+        self.create_table_query = self.read_sql_file(config['sql_file_path'])
+        self.create_table()
 
-        self.create_table_query = """
-        CREATE TABLE IF NOT EXISTS INGREDIENTS (
-            ingredient_id INT,
-            ingredient_name STRING,
-            ingredient_price FLOAT
-        );
-        """
+    def read_sql_file(self, sql_file_path):
         try:
-            cursor = self.conn.cursor()
-            cursor.execute(self.create_table_query)
-            self.conn.commit()
-            cursor.close()
-            print("Table INGREDIENTS is ready.")
+            with open(sql_file_path, 'r') as file:
+                return file.read()
         except Exception as e:
-            print("Error creating table:", e)
-            cursor.close()
-            self.conn.close()
-            exit(1)
+            logger.error(f"Error reading SQL file {sql_file_path}: {e}")
+            return None
+
+    def create_table(self):
+        if self.create_table_query:
+            try:
+                cursor = self.conn.cursor()
+                cursor.execute(self.create_table_query)
+                self.conn.commit()
+                cursor.close()
+                logger.info(f"Table {self.table_name} is ready.")
+            except Exception as e:
+                logger.error(f"Error creating table {self.table_name}: {e}")
+                if cursor:
+                    cursor.close()
+                self.conn.close()
+                exit(1)
 
     def insert_data(self, data):
         cursor = self.conn.cursor()
         try:
-            cursor.execute("""
-                INSERT INTO INGREDIENTS (ingredient_id, ingredient_name, ingredient_price)
-                VALUES (%s, %s, %s)
-            """, (data['ingredient_id'], data['ingredient_name'], data['ingredient_price']))
+            columns = ', '.join(data.keys())
+            placeholders = ', '.join(['%s'] * len(data))
+            query = f"INSERT INTO {self.table_name} ({columns}) VALUES ({placeholders})"
+            cursor.execute(query, tuple(data.values()))
             cursor.close()
             self.conn.commit()
-            print("Data inserted successfully.")
+            logger.info(f"Data inserted successfully into {self.table_name}.")
         except Exception as e:
-            print("Error inserting data:", e)
+            logger.error(f"Error inserting data into {self.table_name}: {e}")
+            if cursor:
+                cursor.close()
 
     def load_changes(self, transformed_changes):
         for data in transformed_changes:

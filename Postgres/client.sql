@@ -1,0 +1,21 @@
+CREATE TABLE client (
+	client_id varchar not null primary key,
+	sex	varchar not null,
+	fulldate date not null,
+	day	integer not null,
+	month	integer not null,
+	year	integer not null,
+	age		integer not null,
+	social	varchar not null,
+	first	varchar not null,
+	middle	varchar not null,
+	last	varchar not null,
+	phone	varchar not null,
+	email	varchar not null,
+	address_1	varchar not null,
+	address_2	varchar,
+	city	varchar not null,
+	state	varchar not null,
+	zipcode	int not null,
+	district_id	integer not null
+);

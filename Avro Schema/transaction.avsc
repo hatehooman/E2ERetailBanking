@@ -1,73 +1,22 @@
 {
-    "type": "record",
-    "name": "transaction",
-    "fields": [
-        {
-            "name": "trans_id",
-            "type": "string"
-        },
-        {
-            "name": "account_id",
-            "type": "string"
-        },
-        {
-            "name": "type",
-            "type": "string"
-        },
-        {
-            "name": "operation",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "amount",
-            "type": "float"
-        },
-        {
-            "name": "balance",
-            "type": "float"
-        },
-        {
-            "name": "k_symbol",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "bank",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "account",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "year",
-            "type": "int"
-        },
-        {
-            "name": "month",
-            "type": "int"
-        },
-        {
-            "name": "day",
-            "type": "int"
-        },
-        {
-            "name": "fulldate",
-            "type": {
-                "type": "int",
-                "logicalType": "date"
-            }
-        },
-        {
-            "name": "fulltime",
-            "type": "string"
-        },
-        {
-            "name": "fulldatewithtime",
-            "type": "string"
-        }
-    ]
+  "type": "record",
+  "name": "transaction",
+  "fields": [
+    {"name": "index", "type": "int"},
+    {"name": "trans_id", "type": "string"},
+    {"name": "account_id", "type": "string"},
+    {"name": "type", "type": "string"},
+    {"name": "operation", "type": ["null", "string"], "default": null},
+    {"name": "amount", "type": "float"},
+    {"name": "balance", "type": "float"},
+    {"name": "k_symbol", "type": ["null", "string"], "default": null},
+    {"name": "bank", "type": ["null", "string"], "default": null},
+    {"name": "account", "type": ["null", "string"], "default": null},
+    {"name": "year", "type": "int"},
+    {"name": "month", "type": "int"},
+    {"name": "day", "type": "int"},
+    {"name": "fulldate","type": {"type": "int", "logicalType": "date"}},
+    {"name": "fulltime", "type": "string"},
+    {"name": "fulldatewithtime", "type": "string"}
+  ]
 }

@@ -1,86 +1,25 @@
 {
-    "type": "record",
-    "name": "client",
-    "fields": [
-        {
-            "name": "client_id",
-            "type": "string"
-        },
-        {
-            "name": "sex",
-            "type": "string"
-        },
-        {
-            "name": "fulldate",
-            "type": {
-                "type": "int",
-                "logicalType": "date"
-            }
-        },
-        {
-            "name": "day",
-            "type": "int"
-        },
-        {
-            "name": "month",
-            "type": "int"
-        },
-        {
-            "name": "year",
-            "type": "int"
-        },
-        {
-            "name": "age",
-            "type": "int"
-        },
-        {
-            "name": "social",
-            "type": "string"
-        },
-        {
-            "name": "first",
-            "type": "string"
-        },
-        {
-            "name": "middle",
-            "type": "string"
-        },
-        {
-            "name": "last",
-            "type": "string"
-        },
-        {
-            "name": "phone",
-            "type": "string"
-        },
-        {
-            "name": "email",
-            "type": "string"
-        },
-        {
-            "name": "address_1",
-            "type": "string"
-        },
-        {
-            "name": "address_2",
-            "type": ["null", "string"],
-            "default": null
-        },
-        {
-            "name": "city",
-            "type": "string"
-        },
-        {
-            "name": "state",
-            "type": "string"
-        },
-        {
-            "name": "zipcode",
-            "type": "int"
-        },
-        {
-            "name": "district_id",
-            "type": "int"
-        }
-    ]
+  "type": "record",
+  "name": "client",
+  "fields": [
+    {"name": "client_id", "type": "string"},
+    {"name": "sex", "type": "string"},
+    {"name": "fulldate","type": {"type": "int", "logicalType": "date"}},
+    {"name": "day", "type": "int"},
+    {"name": "month", "type": "int"},
+    {"name": "year", "type": "int"},
+    {"name": "age", "type": "int"},
+    {"name": "social", "type": "string"},
+    {"name": "first", "type": "string"},
+    {"name": "middle", "type": "string"},
+    {"name": "last", "type": "string"},
+    {"name": "phone", "type": "string"},
+    {"name": "email", "type": "string"},
+    {"name": "address_1", "type": "string"},
+    {"name": "address_2", "type": ["null", "string"], "default": null},
+    {"name": "city", "type": "string"},
+    {"name": "state", "type": "string"},
+    {"name": "zipcode", "type": "int"},
+    {"name": "district_id", "type": "int"}
+  ]
 }

@@ -1,0 +1,148 @@
+{
+    "configs": [ 
+      {
+        "kafka_topic": "postgres.public.account",
+        "kafka_bootstrap_servers": ["localhost:29092"],
+        "avro_schema_path": "./Avro Schema/account.avsc",
+        "snowflake_user": "trucnmt",
+        "snowflake_password": "Thanhtruc28!",
+        "snowflake_account": "WK90181.ap-southeast-1",
+        "snowflake_warehouse": "IMPORT_WH",
+        "snowflake_database": "STAGING",
+        "snowflake_schema": "RAW",
+        "sql_file_path": "./Postgres/account.sql",
+        "table_name": "account"
+      },
+      {
+        "kafka_topic": "postgres.public.district",
+        "kafka_bootstrap_servers": ["localhost:29092"],
+        "avro_schema_path": "./Avro Schema/district.avsc",
+        "snowflake_user": "trucnmt",
+        "snowflake_password": "Thanhtruc28!",
+        "snowflake_account": "WK90181.ap-southeast-1",
+        "snowflake_warehouse": "IMPORT_WH",
+        "snowflake_database": "STAGING",
+        "snowflake_schema": "RAW",
+        "sql_file_path": "./Postgres/district.sql",
+        "table_name": "district"
+      },
+      {
+        "kafka_topic": "postgres.public.client",
+        "kafka_bootstrap_servers": ["localhost:29092"],
+        "avro_schema_path": "./Avro Schema/client.avsc",
+        "snowflake_user": "trucnmt",
+        "snowflake_password": "Thanhtruc28!",
+        "snowflake_account": "WK90181.ap-southeast-1",
+        "snowflake_warehouse": "IMPORT_WH",
+        "snowflake_database": "STAGING",
+        "snowflake_schema": "RAW",
+        "sql_file_path": "./Postgres/client.sql",
+        "table_name": "client"
+      },
+      {
+        "kafka_topic": "postgres.public.crmreviews",
+        "kafka_bootstrap_servers": ["localhost:29092"],
+        "avro_schema_path": "./Avro Schema/crm_reviews.avsc",
+        "snowflake_user": "trucnmt",
+        "snowflake_password": "Thanhtruc28!",
+        "snowflake_account": "WK90181.ap-southeast-1",
+        "snowflake_warehouse": "IMPORT_WH",
+        "snowflake_database": "STAGING",
+        "snowflake_schema": "RAW",
+        "sql_file_path": "./Postgres/crmreviews.sql",
+        "table_name": "CRMReviews"
+      },
+      {
+        "kafka_topic": "postgres.public.loan",
+        "kafka_bootstrap_servers": ["localhost:29092"],
+        "avro_schema_path": "./Avro Schema/loan.avsc",
+        "snowflake_user": "trucnmt",
+        "snowflake_password": "Thanhtruc28!",
+        "snowflake_account": "WK90181.ap-southeast-1",
+        "snowflake_warehouse": "IMPORT_WH",
+        "snowflake_database": "STAGING",
+        "snowflake_schema": "RAW",
+        "sql_file_path": "./Postgres/loan.sql",
+        "table_name": "loan"
+      },
+      {
+        "kafka_topic": "postgres.public.c_order",
+        "kafka_bootstrap_servers": ["localhost:29092"],
+        "avro_schema_path": "./Avro Schema/order.avsc",
+        "snowflake_user": "trucnmt",
+        "snowflake_password": "Thanhtruc28!",
+        "snowflake_account": "WK90181.ap-southeast-1",
+        "snowflake_warehouse": "IMPORT_WH",
+        "snowflake_database": "STAGING",
+        "snowflake_schema": "RAW",
+        "sql_file_path": "./Postgres/order.sql",
+        "table_name": "c_order"
+      },
+      {
+        "kafka_topic": "postgres.public.c_transaction",
+        "kafka_bootstrap_servers": ["localhost:29092"],
+        "avro_schema_path": "./Avro Schema/transaction.avsc",
+        "snowflake_user": "trucnmt",
+        "snowflake_password": "Thanhtruc28!",
+        "snowflake_account": "WK90181.ap-southeast-1",
+        "snowflake_warehouse": "IMPORT_WH",
+        "snowflake_database": "STAGING",
+        "snowflake_schema": "RAW",
+        "sql_file_path": "./Postgres/transaction.sql",
+        "table_name": "c_transaction"
+      },
+      {
+        "kafka_topic": "postgres.public.disposition",
+        "kafka_bootstrap_servers": ["localhost:29092"],
+        "avro_schema_path": "./Avro Schema/disposition.avsc",
+        "snowflake_user": "trucnmt",
+        "snowflake_password": "Thanhtruc28!",
+        "snowflake_account": "WK90181.ap-southeast-1",
+        "snowflake_warehouse": "IMPORT_WH",
+        "snowflake_database": "STAGING",
+        "snowflake_schema": "RAW",
+        "sql_file_path": "./Postgres/disposition.sql",
+        "table_name": "disposition"
+      },
+      {
+        "kafka_topic": "postgres.public.card",
+        "kafka_bootstrap_servers": ["localhost:29092"],
+        "avro_schema_path": "./Avro Schema/card.avsc",
+        "snowflake_user": "trucnmt",
+        "snowflake_password": "Thanhtruc28!",
+        "snowflake_account": "WK90181.ap-southeast-1",
+        "snowflake_warehouse": "IMPORT_WH",
+        "snowflake_database": "STAGING",
+        "snowflake_schema": "RAW",
+        "sql_file_path": "./Postgres/card.sql",
+        "table_name": "card"
+      },
+      {
+        "kafka_topic": "postgres.public.crmevents",
+        "kafka_bootstrap_servers": ["localhost:29092"],
+        "avro_schema_path": "./Avro Schema/crm_events.avsc",
+        "snowflake_user": "trucnmt",
+        "snowflake_password": "Thanhtruc28!",
+        "snowflake_account": "WK90181.ap-southeast-1",
+        "snowflake_warehouse": "IMPORT_WH",
+        "snowflake_database": "STAGING",
+        "snowflake_schema": "RAW",
+        "sql_file_path": "./Postgres/crm_events.sql",
+        "table_name": "CRMEvents"
+      },
+      {
+        "kafka_topic": "postgres.public.crmcallcenterlogs",
+        "kafka_bootstrap_servers": ["localhost:29092"],
+        "avro_schema_path": "./Avro Schema/call_center_logs.avsc",
+        "snowflake_user": "trucnmt",
+        "snowflake_password": "Thanhtruc28!",
+        "snowflake_account": "WK90181.ap-southeast-1",
+        "snowflake_warehouse": "IMPORT_WH",
+        "snowflake_database": "STAGING",
+        "snowflake_schema": "RAW",
+        "sql_file_path": "./Postgres/CRMCallCenterLogs.sql",
+        "table_name": "CRMCallCenterLogs"
+      }
+    ]
+  }
+  
