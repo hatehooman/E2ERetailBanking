@@ -127,7 +127,6 @@ def train_and_evaluate_models(session, train_df, val_df, feature_cols, label_col
         )
 
 
-# === Main Pipeline ===
 def main():
     session = init_session()
     registry = Registry(session=session, database_name="STAGING", schema_name="CLEAN")
