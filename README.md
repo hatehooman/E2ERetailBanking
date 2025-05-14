@@ -19,7 +19,7 @@ Main task in our project
 2. Data Warehousing
 3. Analysis and Model Training
 
-Video Demo CDC & Set Up Warehouse in [here.](https://drive.google.com/drive/u/0/folders/1ALpr_ynljZPSVI5ec3WfbT3Ytvbg3FqM)
+<!-- Video Demo CDC & Set Up Warehouse in [here.](https://drive.google.com/drive/u/0/folders/1ALpr_ynljZPSVI5ec3WfbT3Ytvbg3FqM) -->
 
 Technologies Used
 ----------------
@@ -51,7 +51,7 @@ Entity Relationship Diagram
 
 Change Data Capture
 ----------------
-![CDC](./Architecture/Change%20Data%20Capture.png)
+<!-- ![CDC](./Architecture/Change%20Data%20Capture.png) -->
 
 * **Data Source**: Postgres
 * **CDC Connector**: Debezium
@@ -61,7 +61,7 @@ Change Data Capture
 
 Data Warehouse Architecture
 ----------------
-![DataWarehouse](./Architecture/Data%20Warehouse%20Design.png)
+<!-- ![DataWarehouse](./Architecture/Data%20Warehouse%20Design.png) -->
 
 #### Snowflake Data Warehouse Setup Detail
 
